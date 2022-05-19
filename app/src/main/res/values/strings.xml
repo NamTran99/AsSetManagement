@@ -5,4 +5,39 @@
 
     <string name="navigation_drawer_open">Open navigation Drawer</string>
     <string name="navigation_drawer_close">Close navigation Drawer</string>
+    <string name="welcome_to_it_asset_management">Welcome to IT Asset Management</string>
+    <string name="sign_in">Sign in</string>
+    <string name="or_sign_in_with">or sign in with</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="don_t_have_account">Don\'t have account ?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="home">Home</string>
+    <string name="assets">Assets</string>
+    <string name="assignment">Assignment</string>
+    <string name="requests">Requests</string>
+    <string name="reports">Reports</string>
+    <string name="profile">Profile</string>
+    <string name="user">User</string>
+    <string name="it_asset_management">IT Asset Management</string>
+    <string name="hoa_sen_university">Hoa Sen University</string>
+    <string name="create_new_asset">Create New Asset</string>
+    <string name="name_of_new_asset">Name of New Asset</string>
+    <string name="category">Category</string>
+    <string name="specification">Specification</string>
+    <string name="install_date">Install Date</string>
+    <string name="state">State:</string>
+    <string name="available">Available</string>
+    <string name="notavailable">NotAvailable</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">CANCEL</string>
+
+
+    <string name="sign_in_succesfully">Sign in successfully</string>
+    <string name="sign_up_succesfully">Sign up successfully</string>
+    <string name="sign_in_with_wrong_password">You type wrong password !!</string>
+    <string name="tasks_pending">Tasks \n Pending</string>
+    <string name="tasks_n_in_progress">Tasks \n In Progress</string>
+    <string name="my_task">My Task</string>
 </resources>

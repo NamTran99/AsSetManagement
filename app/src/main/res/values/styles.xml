@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HomeNumber">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">36dp</item>
+        <item name="android:layout_marginBottom">148dp</item>
+        <item name="android:textColor">@color/color_6bd6ab</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="HomeTask">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">96dp</item>
+        <item name="android:textColor">@color/color_82a3a3</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StatusName">
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_145252</item>
+    </style>
+
+    <style name="StatusContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textColor">@color/color_145252</item>
+    </style>
+
+    <style name="StatusLayout">
+        <item name="android:layout_width">@dimen/_120sdp</item>
+        <item name="android:layout_height">@dimen/_120sdp</item>
+        <item name="android:padding">@dimen/_14sdp</item>
+        <item name="android:background">@drawable/bg_home_status</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+</resources>

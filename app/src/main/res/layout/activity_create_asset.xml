@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAssetActivity">
-
+    tools:context=".temp.CreateAssetActivity">
 
     <LinearLayout
         android:id="@+id/layout_header"
@@ -16,26 +14,26 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:src="@drawable/ic_baseline_perm_contact_calendar_24"></ImageView>
+            android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo"
-            android:text="IT Asset Management"
+            android:text="@string/it_asset_management"
             android:textSize="24sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="Hoa Sen University"
+            android:text="@string/hoa_sen_university"
             android:textSize="14sp"
-            android:textStyle="italic"></TextView>
+            android:textStyle="italic" />
 
     </LinearLayout>
 
@@ -55,9 +53,9 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/baloo"
             android:gravity="center"
-            android:text="Create New Asset"
-            android:textSize="28dp"
-            android:textStyle="bold"></TextView>
+            android:text="@string/create_new_asset"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/layout_create_name_asset"
@@ -71,7 +69,7 @@
             android:layout_marginBottom="2dp">
 
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_new_name_asset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,14 +79,14 @@
                 android:layout_marginBottom="5dp"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:drawableLeft="@drawable/ic_baseline_create_24"
+                android:drawableStart="@drawable/ic_baseline_create_24"
                 android:drawablePadding="5dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/baloo"
-                android:hint="Name of New Asset"
+                android:hint="@string/name_of_new_asset"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -103,7 +101,7 @@
             android:layout_marginBottom="2dp">
 
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_new_category_asset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,14 +111,14 @@
                 android:layout_marginBottom="5dp"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:drawableLeft="@drawable/ic_baseline_create_24"
+                android:drawableStart="@drawable/ic_baseline_create_24"
                 android:drawablePadding="5dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/baloo"
-                android:hint="Category"
+                android:hint="@string/category"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -135,7 +133,7 @@
             android:layout_marginBottom="2dp">
 
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_new_specification_asset"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
@@ -145,14 +143,14 @@
                 android:layout_marginBottom="5dp"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:drawableLeft="@drawable/ic_baseline_create_24"
+                android:drawableStart="@drawable/ic_baseline_create_24"
                 android:drawablePadding="5dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/baloo"
-                android:hint="Specification"
+                android:hint="@string/specification"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -167,7 +165,7 @@
             android:layout_marginBottom="2dp">
 
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edt_install_date_asset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -177,15 +175,15 @@
                 android:layout_marginBottom="5dp"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:drawableLeft="@drawable/ic_baseline_calendar_month_24"
+                android:drawableStart="@drawable/ic_baseline_calendar_month_24"
                 android:drawablePadding="5dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/baloo"
-                android:hint="Install Date"
+                android:hint="@string/install_date"
                 android:inputType="date"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
 
         </RelativeLayout>
 
@@ -210,9 +208,9 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:padding="10dp"
-                android:text="State: "
-                android:textSize="16dp"
-                android:textStyle="bold"></TextView>
+                android:text="@string/state"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radio_available"
@@ -224,10 +222,10 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:padding="10dp"
-                android:text="Available"
+                android:text="@string/available"
                 android:textColor="#6E6269"
-                android:textSize="16dp"
-                android:textStyle="bold"></RadioButton>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radio_notavailable"
@@ -239,10 +237,10 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:padding="10dp"
-                android:text="NotAvailable"
+                android:text="@string/notavailable"
                 android:textColor="#6E6269"
-                android:textSize="16dp"
-                android:textStyle="bold"></RadioButton>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -263,9 +261,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
                 android:backgroundTint="#E06C78"
-                android:text="SAVE"
+                android:text="@string/save"
                 android:textColor="#FBEEE6"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold">
 
             </com.google.android.material.button.MaterialButton>
@@ -277,9 +275,9 @@
                 android:layout_marginStart="12dp"
                 android:layout_toEndOf="@+id/btn_save_asset"
                 android:backgroundTint="#79616F"
-                android:text="CANCEL"
+                android:text="@string/cancel"
                 android:textColor="#FBEEE6"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold">
 
             </com.google.android.material.button.MaterialButton>

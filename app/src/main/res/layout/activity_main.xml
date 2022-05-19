@@ -1,154 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:id="@+id/layout_header"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
+    <data>
 
+    </data>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:text="Welcom to IT Asset Management"
-            android:textSize="25sp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/aclonica"
-            android:text="Hoa Sen University"
-            android:textSize="14sp"
-            android:textStyle="italic"></TextView>
-
-    </LinearLayout>
-
-    <RelativeLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/layout_header">
-
-        <TextView
-            android:id="@+id/tv_signin_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/baloo"
-            android:gravity="center"
-            android:text="Sign in"
-            android:textSize="50dp"
-            android:textStyle="bold"></TextView>
-
-        <EditText
-            android:id="@+id/edt_username_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_signin_login"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
-            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-            android:drawablePadding="10dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/baloo"
-            android:hint="Email"
-            android:imeOptions="actionNext"
-            android:inputType="textEmailAddress"
-            android:maxLength="100"
-            android:padding="20dp"
-            android:textColor="#232629"
-            android:textColorHint="#DDDDDA"></EditText>
-
-        <EditText
-            android:id="@+id/edt_password_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/edt_username_login"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
-            android:drawableLeft="@drawable/ic_baseline_info_24"
-            android:drawablePadding="10dp"
-            android:elevation="5dp"
-            android:fontFamily="@font/baloo"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:imeOptions="actionDone"
-            android:maxLength="100"
-            android:padding="20dp"
-            android:textColor="#232629"
-            android:textColorHint="#DDDDDA"></EditText>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_signin_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/edt_password_login"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="#E06C78"
-            android:fontFamily="@font/baloo"
-            android:text="SIGN IN"
-            android:textSize="25dp"
-            android:textStyle="bold"></com.google.android.material.button.MaterialButton>
-
-        <TextView
-            android:id="@+id/tv_or_signin_with_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_signin_login"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/baloo"
-            android:gravity="center"
-            android:text="or sign in with"
-            android:textSize="18dp"></TextView>
+        android:fitsSystemWindows="true">
 
         <LinearLayout
-            android:id="@+id/layout_socialicons_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_or_signin_with_login"
-            android:layout_marginTop="10dp"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iv_fb"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="15dp"
-                android:src="@drawable/fb"></ImageView>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/mainContainerView"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="@dimen/dp0"
+                app:defaultNavHost="true"
+                app:layout_anchorGravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/nav_main" />
 
-            <ImageView
-                android:id="@+id/iv_gg"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="15dp"
-                android:src="@drawable/google"></ImageView>
         </LinearLayout>
 
-    </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/main_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
 
-</RelativeLayout>
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--android:id="@+id/bottomNavigationView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/dp56"-->
+    <!--android:background="@color/h9A000000"-->
+    <!--app:itemIconTint="@drawable/nav_item_color_selector"-->
+    <!--app:itemTextColor="@drawable/nav_item_color_selector"-->
+    <!--app:labelVisibilityMode="labeled"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:menu="@menu/bottom_menu" />-->
