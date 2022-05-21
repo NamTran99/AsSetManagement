@@ -1,9 +1,12 @@
 package com.son.finalproject.data
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
-data class Specification(
+data class Specification (
+    @PrimaryKey
     val specificationID: Int,
     val specification: String,
     val modelNo: Int,
