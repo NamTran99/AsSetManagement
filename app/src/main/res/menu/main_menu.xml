@@ -3,19 +3,22 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/homeFragment"
             android:icon="@drawable/ic_baseline_home_24"
+            android:menuCategory="secondary"
             android:title="@string/home" />
 
         <item
-            android:id="@+id/nav_asset"
+            android:id="@+id/assetManageFragment"
             android:icon="@drawable/ic_baseline_product_24"
+            android:menuCategory="secondary"
             android:title="@string/assets" />
 
         <item
-            android:id="@+id/nav_assignment"
-            android:icon="@drawable/ic_baseline_assignment_24"
-            android:title="@string/assignment" />
+            android:id="@+id/userManagementFragment"
+            android:icon="@drawable/ic_baseline_product_24"
+            android:menuCategory="secondary"
+            android:title="@string/user_management" />
 
         <item
             android:id="@+id/nav_request"

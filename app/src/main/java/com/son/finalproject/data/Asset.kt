@@ -1,15 +1,18 @@
 package com.son.finalproject.data
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.son.finalproject.utils.RoomExtension
 
-@Entity
+@Entity(tableName = RoomExtension.TABLE_ASSET)
 data class Asset(
-    val assetCode: Int,
-    val assetName: String,
-    val installDate: String,
-    val specificationID: Int,
-    val status: Int,
-    val location: String,
-    val isAssigned: Boolean,
-    val categoryID: Int,
+    @PrimaryKey
+    val assetCode: String = "",
+    val assetName: String = "" ,
+    val installDate: String= "",
+    val specification: String= "",
+    val status: Int = 0, // 0 available, 1 notvailable
+    val location: String= "",
+    val isAssigned: Boolean= false,
+    val categoryID: Int = 0,
 )

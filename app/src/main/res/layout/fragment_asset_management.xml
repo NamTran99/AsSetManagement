@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.asset.viewmodels.AssetViewModel" />
     </data>
 
     <RelativeLayout

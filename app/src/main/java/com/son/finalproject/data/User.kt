@@ -5,6 +5,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.son.finalproject.utils.RoomExtension
 
+// Tạo các NHIỀU trường nào là unique, ở đây là trường <email>, tableNem: tạo tên bảng
 @Entity(indices = [Index(value = ["email"], unique = true)], tableName = RoomExtension.TABLE_USER)
 data class User(
     @PrimaryKey(autoGenerate = true)

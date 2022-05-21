@@ -17,16 +17,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="IT Asset Management"
+        android:text="@string/it_asset_management"
         android:textSize="24sp"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
-        android:text="Hoa Sen University"
+        android:text="@string/hoa_sen_university"
         android:textSize="14sp"
-        android:textStyle="italic"></TextView>
+        android:textStyle="italic" />
 
 </LinearLayout>

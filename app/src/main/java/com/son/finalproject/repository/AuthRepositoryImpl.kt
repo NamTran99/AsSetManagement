@@ -14,6 +14,6 @@ class AuthRepositoryImpl @Inject constructor(private val userDao:UserDAO): AuthR
 
     override suspend fun registerUser(user: User): Long{
         Log.d("TAG", "registerUser: $user")
-        return userDao.insertUser(user)
+        return userDao.insert(user)
     }
 }

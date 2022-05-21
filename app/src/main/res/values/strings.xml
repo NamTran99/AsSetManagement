@@ -47,4 +47,6 @@
     <string name="email_error">Email is not valid </string>
     <string name="password_error">Password must input at least 6 character </string>
     <string name="null_error">This field require not null</string>
+    <string name="user_information">User Information</string>
+    <string name="user_management">User Management</string>
 </resources>

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/bg_home_button.xml" value="0.2035" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/bg_home_status.xml" value="0.1765" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/gradient_spinner.xml" value="0.1" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/ic_bell.xml" value="0.212" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_create_asset.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_create_assignment.xml" value="0.25416666666666665" />
@@ -13,17 +14,21 @@
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_menu.xml" value="0.16" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_sign_up.xml" value="0.19947916666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_splash.xml" value="0.19947916666666668" />
-        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset.xml" value="0.152" />
-        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_assignment.xml" value="0.10989583333333333" />
-        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_create_asset.xml" value="0.23854166666666668" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset.xml" value="0.4" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset_management.xml" value="0.23854166666666668" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_assignment.xml" value="0.4" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_create_asset.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_report.xml" value="0.10989583333333333" />
-        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_request.xml" value="0.16979166666666667" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_request.xml" value="0.4" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_sign_in.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_sign_in2.xml" value="0.23854166666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_splash.xml" value="0.19947916666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_user.xml" value="0.16979166666666667" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_asset_spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_asset_spinner_1.xml" value="0.16" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
