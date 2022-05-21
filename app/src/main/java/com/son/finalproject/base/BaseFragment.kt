@@ -88,8 +88,12 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(
         Log.d(TAG, "onStop: ")
     }
 
-    open fun showToast(content: String, type: Int) {
-        Toast.makeText(context, content, type).show()
+    open fun showToast(content: String, duration: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(context, content, duration).show()
+    }
+
+    open fun showToast(contentID: Int, duration: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(context, getString(contentID), duration).show()
     }
 
     open fun onBackFragment() {

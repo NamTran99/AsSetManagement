@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="action"
             type="com.son.finalproject.ui.authentication.viewmodels.AuthenticationViewModel" />
@@ -27,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
+                android:textAlignment="center"
                 android:text="@string/welcome_to_it_asset_management"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -60,55 +62,41 @@
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edt_username_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_signin_login"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="#FFFFFF"
-                android:text="@={action.email}"
-                android:backgroundTint="#FFFFFF"
-                android:drawableStart="@drawable/ic_baseline_person_outline_24"
-                android:drawablePadding="10dp"
-                android:elevation="5dp"
-                android:fontFamily="@font/baloo"
-                android:hint="@string/email"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:maxLength="100"
-                android:padding="20dp"
-                android:textColor="#232629"
-                android:textColorHint="#DDDDDA" />
+                android:layout_marginHorizontal="@dimen/_10sdp">
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_username"
+                    android:hint="@string/email"
+                    android:text="@={action.email}"
+                    style="@style/TextInputStyle"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edt_password_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edt_username_login"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:hint="@string/password"
-                android:text="@={action.password}"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                android:drawableStart="@drawable/ic_baseline_info_24"
-                android:drawablePadding="10dp"
-                android:elevation="5dp"
-                android:fontFamily="@font/baloo"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:maxLength="100"
-                android:padding="20dp"
-                android:textColor="#232629"
-                android:textColorHint="#DDDDDA" />
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp">
 
-            <com.google.android.material.button.MaterialButton
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_password"
+                    android:hint="@string/password"
+                    android:drawableStart="@drawable/ic_baseline_info_24"
+                    android:text="@={action.password}"
+                    android:inputType="textPassword"
+                    style="@style/TextInputStyle"
+                    android:textColorHint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_signin_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,7 +108,6 @@
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#E06C78"
                 android:fontFamily="@font/baloo"
-                android:onClick="@{()-> action.onClickLogin()}"
                 android:text="@string/sign_in"
                 android:textSize="25sp"
                 android:textStyle="bold" />

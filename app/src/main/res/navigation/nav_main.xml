@@ -40,7 +40,23 @@
         android:id="@+id/homeFragment"
         android:name="com.son.finalproject.ui.home.fragments.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_createAssetFragment"
+            app:destination="@id/createAssetFragment"
+         />
+
+        <argument
+            android:name = "userEmail"
+            app:argType="string"
+            android:defaultValue="trandinhnam1199@gmail.com"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/createAssetFragment"
+        android:name="com.son.finalproject.ui.asset.CreateAssetFragment"
+        android:label="CreateAssetFragment"
+        tools:layout="@layout/fragment_create_asset"/>
 
 
 </navigation>

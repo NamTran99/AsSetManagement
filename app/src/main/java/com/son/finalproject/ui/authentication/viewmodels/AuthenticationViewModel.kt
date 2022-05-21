@@ -22,13 +22,18 @@ class AuthenticationViewModel @Inject constructor(
     val password = MutableLiveData(EMPTY_STRING)
     val rewritePassword = MutableLiveData(EMPTY_STRING)
 
-    fun onClickLogin() = viewModelScope.launch {
+    fun autoLogin(){
+
+    }
+
+    fun loginUser() = viewModelScope.launch {
         email.value?.let {
             val user = authRepository.getUserByEmail(it)
             Log.d(TAG, "onClickLogin: $user")
             user?.let { user ->
                 if (user.password == password.value) {
                     navigateToDestination(R.id.action_signInFragment_to_homeFragment)
+                    mySharedPreferences.saveUserEmail(user.email)
                     showToast(getString(R.string.sign_in_succesfully))
                 } else {
                     showToast(getString(R.string.sign_in_with_wrong_password))
@@ -44,11 +49,18 @@ class AuthenticationViewModel @Inject constructor(
                     val isSuccess = authRepository.registerUser(User(email = email, password = password))
                     if(isSuccess > 0){
                         navigateToDestination(R.id.action_signUpFragment_to_homeFragment)
+                        mySharedPreferences.saveUserEmail(email)
                         showToast(getString(R.string.sign_up_succesfully))
                     }
                 }
             }
         }
+    }
+
+    fun clearAllField(){
+        email.value = EMPTY_STRING
+        password.value = EMPTY_STRING
+        rewritePassword.value = EMPTY_STRING
     }
 
     companion object {

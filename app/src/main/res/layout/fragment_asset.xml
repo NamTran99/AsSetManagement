@@ -1,162 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".temp.fragment.AssetFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        android:id="@+id/layout_header"
-        android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:background="@drawable/background"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:padding="20dp">
+    <data>
 
-        <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:src="@drawable/ic_baseline_perm_contact_calendar_24"></ImageView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:text="IT Asset Management"
-            android:textSize="24sp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/aclonica"
-            android:text="Hoa Sen University"
-            android:textSize="14sp"
-            android:textStyle="italic"></TextView>
-
-    </LinearLayout>
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/layout_header"
-        android:layout_marginTop="5dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/title_manage_assets"
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:id="@+id/layout_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/baloo"
-            android:gravity="center"
-            android:text="Manage Assets"
-            android:textSize="28dp"
-            android:textStyle="bold"></TextView>
+            android:layout_height="175dp"
+            android:background="@drawable/background"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="IT Asset Management"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="Hoa Sen University"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/layout_manage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_manage_assets"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_header"
+            android:layout_marginTop="5dp">
 
-            <EditText
-                android:id="@+id/edt_category"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/title_manage_assets"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginBottom="5dp"
-                android:background="#DDDDDA"
-                android:backgroundTint="#F3EFEF"
-                android:drawableRight="@drawable/ic_baseline_filter_alt_24"
-                android:drawablePadding="5dp"
-                android:elevation="5dp"
-                android:fontFamily="@font/aclonica"
-                android:hint="Category"
-                android:padding="10dp"
-                android:textColor="#041B2D"></EditText>
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="Manage Assets"
+                android:textSize="28dp"
+                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edt_status"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/layout_manage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/title_manage_assets"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_toEndOf="@+id/edt_category"
-                android:background="#DDDDDA"
-                android:backgroundTint="#F3EFEF"
-                android:drawableRight="@drawable/ic_baseline_filter_alt_24"
-                android:drawablePadding="5dp"
-                android:elevation="5dp"
-                android:fontFamily="@font/aclonica"
-                android:hint="Status"
-                android:padding="10dp"
-                android:textColor="#041B2D"></EditText>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_create_new_asset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_toEndOf="@+id/edt_status"
-                android:backgroundTint="#E06C78"
-                android:elevation="5dp"
-                android:fontFamily="@font/aclonica"
-                android:padding="5dp"
-                android:text="Create new asset"
-                android:textColor="#FBEEE6"
-                android:textSize="13dp"></com.google.android.material.button.MaterialButton>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/asset_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layout_manage"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list_asset"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp">
-
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <Button
-                android:id="@+id/btn_edit_1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="340dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="#F3EFEF"
-                android:drawableRight="@drawable/ic_baseline_edit_24"></Button>
+                android:layout_marginBottom="5dp">
+
+                <EditText
+                    android:id="@+id/edt_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#DDDDDA"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
+                    android:drawablePadding="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:hint="Category"
+                    android:padding="10dp"
+                    android:textColor="#041B2D" />
+
+                <EditText
+                    android:id="@+id/edt_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/edt_category"
+                    android:background="#DDDDDA"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
+                    android:drawablePadding="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:hint="Status"
+                    android:padding="10dp"
+                    android:textColor="#041B2D" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_create_new_asset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/edt_status"
+                    android:backgroundTint="#E06C78"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:padding="5dp"
+                    android:text="Create new asset"
+                    android:textColor="#FBEEE6"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/asset_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_manage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_asset"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/btn_edit_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
     </RelativeLayout>
-
-</RelativeLayout>
+</layout>

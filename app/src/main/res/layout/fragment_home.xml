@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.home.viewmodels.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -259,7 +261,8 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_home_button"
             android:backgroundTint="@color/color_77e6b6"
-            android:text="CREATE TICKET"
+            android:text="@string/create_ticket"
+            android:onClick="@{ () -> action.onClickCreateAsset()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"

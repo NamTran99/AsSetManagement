@@ -44,4 +44,19 @@
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:orientation">vertical</item>
     </style>
+
+    <style name="TextInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_person_outline_24</item>
+        <item name="android:paddingBottom">@dimen/_20sdp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:fontFamily">@font/baloo</item>
+        <item name="android:textColorHint">#DDDDDA</item>
+        <item name="android:textColor">#232629</item>
+    </style>
 </resources>

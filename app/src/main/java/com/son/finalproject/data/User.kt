@@ -32,7 +32,7 @@ data class User(
                 location = "Quảng Bình",
                 type = 0,
                 email = "trandinhnam1199@gmail.com",
-                password = "1"
+                password = "12345678"
             ),
             User(
                 firstName = "Sang",

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.son.finalproject.utils.MyPreference
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -15,6 +16,8 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     protected val TAG by lazy { this::class.java.name }
     protected val evenSender = Channel<AppEvent>()
     val eventReceiver = evenSender.receiveAsFlow().conflate()
+
+    val mySharedPreferences = MyPreference(application.applicationContext)
 
     override fun onClickClose() {
         viewModelScope.launch {

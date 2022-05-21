@@ -40,4 +40,11 @@
     <string name="tasks_pending">Tasks \n Pending</string>
     <string name="tasks_n_in_progress">Tasks \n In Progress</string>
     <string name="my_task">My Task</string>
+    <string name="create_ticket">CREATE TICKET</string>
+    <string name="back_2_time">Please click BACK again to exit</string>
+
+    <!--    validate string error-->
+    <string name="email_error">Email is not valid </string>
+    <string name="password_error">Password must input at least 6 character </string>
+    <string name="null_error">This field require not null</string>
 </resources>
