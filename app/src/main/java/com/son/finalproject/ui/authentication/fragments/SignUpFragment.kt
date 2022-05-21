@@ -24,12 +24,6 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, AuthenticationViewMod
             action = viewModel
             lifecycleOwner = viewLifecycleOwner
 
-            root.setOnClickListener{
-                hideKeyboard(binding.edtPasswordSignup)
-                hideKeyboard(binding.edtCfPasswordSignup)
-                hideKeyboard(binding.edtUsernameSignup)
-            }
-
             initValidation()
         }
     }

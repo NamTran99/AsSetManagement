@@ -37,10 +37,13 @@
     <string name="sign_in_succesfully">Sign in successfully</string>
     <string name="sign_up_succesfully">Sign up successfully</string>
     <string name="sign_in_with_wrong_password">You type wrong password !!</string>
-    <string name="tasks_pending">Tasks \n Pending</string>
-    <string name="tasks_n_in_progress">Tasks \n In Progress</string>
+    <string name="user_not_found">The account has not been initialized</string>
+    <string name="request_pending">Request \n Pending</string>
+    <string name="request_complete">Request \n Complete</string>
+    <string name="assets_avaiable">Assets \n Avaiable</string>
     <string name="my_task">My Task</string>
-    <string name="create_ticket">CREATE TICKET</string>
+    <string name="create_category">CREATE CATEGORY</string>
+    <string name="create_request">Create Request</string>
     <string name="back_2_time">Please click BACK again to exit</string>
 
     <!--    validate string error-->

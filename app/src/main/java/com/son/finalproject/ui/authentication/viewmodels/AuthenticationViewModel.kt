@@ -17,13 +17,14 @@ class AuthenticationViewModel @Inject constructor(
     application: Application,
     private val authRepository: AuthRepositoryImpl
 ) : BaseViewModel(application) {
-
     val email = MutableLiveData(EMPTY_STRING)
     val password = MutableLiveData(EMPTY_STRING)
     val rewritePassword = MutableLiveData(EMPTY_STRING)
 
-    fun autoLogin(){
-
+    init {
+       viewModelScope.launch {
+           authRepository.getUserByEmail("")
+       }
     }
 
     fun loginUser() = viewModelScope.launch {
@@ -34,11 +35,16 @@ class AuthenticationViewModel @Inject constructor(
                 if (user.password == password.value) {
                     navigateToDestination(R.id.action_signInFragment_to_homeFragment)
                     mySharedPreferences.saveUserEmail(user.email)
+                    if(user.type == TYPE_ADMIN){
+                        mySharedPreferences.saveAdmin(true)
+                    }
                     showToast(getString(R.string.sign_in_succesfully))
                 } else {
                     showToast(getString(R.string.sign_in_with_wrong_password))
                 }
+                return@launch
             }
+            showToast(getString(R.string.user_not_found))
         }
     }
 
@@ -47,13 +53,19 @@ class AuthenticationViewModel @Inject constructor(
             password.value?.let{ password ->
                 rewritePassword.value?.let{ rewritePassword ->
                     val isSuccess = authRepository.registerUser(User(email = email, password = password))
-                    if(isSuccess > 0){
+                    if(isSuccess > ZERO){
                         navigateToDestination(R.id.action_signUpFragment_to_homeFragment)
                         mySharedPreferences.saveUserEmail(email)
                         showToast(getString(R.string.sign_up_succesfully))
                     }
                 }
             }
+        }
+    }
+
+    fun checkAccount() {
+        if(mySharedPreferences.getUserEmail() != EMPTY_STRING){
+            navigateToDestination(R.id.action_signInFragment_to_homeFragment)
         }
     }
 
@@ -64,6 +76,8 @@ class AuthenticationViewModel @Inject constructor(
     }
 
     companion object {
-        const val EMPTY_STRING = ""
+        private const val ZERO = 0
+        private const val EMPTY_STRING = ""
+        private const val TYPE_ADMIN = 1
     }
 }

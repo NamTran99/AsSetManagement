@@ -5,8 +5,13 @@ import com.son.finalproject.data.User
 import com.son.finalproject.repository.interfaces.AuthRepository
 import com.son.finalproject.room.dao.UserDAO
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class AuthRepositoryImpl @Inject constructor(private val userDao:UserDAO): AuthRepository() {
+@Singleton
+class AuthRepositoryImpl @Inject constructor(
+    private val userDao:UserDAO
+): AuthRepository() {
+
     override suspend fun getUserByEmail(email: String): User? {
         Log.d("TAG", "getUserByEmail: $email")
         return userDao.getUserNameByEmail(email)

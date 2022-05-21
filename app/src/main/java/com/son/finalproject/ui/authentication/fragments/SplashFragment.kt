@@ -22,6 +22,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, AuthenticationViewMod
                 viewModel.clearAllField()
                 navigateToDestination(R.id.action_splashFragment_to_signInFragment)
             }
+
             btnSignupSplash.setOnClickListener {
                 viewModel.clearAllField()
                 navigateToDestination(R.id.action_splashFragment_to_signUpFragment)

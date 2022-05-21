@@ -21,20 +21,19 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, AuthenticationViewMod
     override val viewModel: AuthenticationViewModel by activityViewModels()
     override val layoutId = R.layout.fragment_sign_in
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.checkAccount()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             action = viewModel
             lifecycleOwner = viewLifecycleOwner
-
-            root.setOnClickListener{
-                hideKeyboard(binding.edtPasswordLogin)
-                hideKeyboard(binding.edtUsernameLogin)
-            }
         }
 
         initValidation()
-        viewModel.loginUser()
     }
 
     private fun initValidation() {

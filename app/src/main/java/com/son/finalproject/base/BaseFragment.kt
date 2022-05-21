@@ -14,6 +14,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.son.finalproject.utils.findNavController
+import com.son.finalproject.utils.hideKeyboard
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -56,6 +57,10 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: ")
+        _binding?.root?.setOnClickListener {
+            hideKeyboard(it)
+        }
+
         jopEventReceiver = lifecycleScope.launch {
             viewModel.eventReceiver.collectLatest {
                 when (it) {

@@ -30,9 +30,9 @@
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="91dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="30sp"
-                android:text="Hello, Nam Tran"
+                android:text="@{action.homeData.fullName}"
                 app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +45,7 @@
                 android:layout_marginTop="16dp"
                 android:textColor="@color/color_36907a"
                 android:textSize="20sp"
-                android:text="Monday, 17 jan 2022"
+                android:text="@{action.homeData.dateTime}"
                 app:layout_constraintStart_toStartOf="@+id/welcome_user"
                 app:layout_constraintTop_toBottomOf="@+id/welcome_user"
                 tools:text="Monday, 17 jan 2022" />
@@ -84,14 +84,15 @@
             <TextView
                 android:id="@+id/textView"
                 style="@style/HomeNumber"
-                android:text="08"
+                android:text="@{String.valueOf(action.homeData.requestPending)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="15"/>
 
             <TextView
                 android:id="@+id/textView4"
                 style="@style/HomeTask"
-                android:text="@string/tasks_pending"
+                android:text="@string/request_pending"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView" />
 
@@ -99,15 +100,16 @@
                 android:id="@+id/textView2"
                 style="@style/HomeNumber"
                 android:layout_marginBottom="148dp"
-                android:text="15"
+                android:text="@{String.valueOf(action.homeData.requestAccept)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/line1" />
+                app:layout_constraintStart_toEndOf="@+id/line1"
+                tools:text="15"/>
 
             <TextView
                 android:id="@+id/textView5"
                 style="@style/HomeTask"
                 android:layout_marginBottom="96dp"
-                android:text="@string/tasks_n_in_progress"
+                android:text="@string/request_complete"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toTopOf="@+id/textView4" />
@@ -116,15 +118,16 @@
                 android:id="@+id/textView3"
                 style="@style/HomeNumber"
                 android:layout_marginBottom="148dp"
-                android:text="15"
+                android:text="@{String.valueOf(action.homeData.assetsAvaiable)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/line2" />
+                app:layout_constraintStart_toEndOf="@+id/line2"
+                tools:text="15"/>
 
             <TextView
                 android:id="@+id/textView6"
                 style="@style/HomeTask"
                 android:layout_marginBottom="96dp"
-                android:text="Tasks \n Completed"
+                android:text="@string/assets_avaiable"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView3"
                 app:layout_constraintTop_toTopOf="@+id/textView5"
@@ -155,7 +158,7 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/my_task" />
+                android:text="@string/assets" />
 
             <TextView
                 style="@style/StatusContent"
@@ -185,7 +188,8 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/my_task" />
+                android:text="@{action.homeData.textBox2}"
+                tools:text="assignment"/>
 
             <TextView
                 style="@style/StatusContent"
@@ -216,7 +220,7 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/my_task" />
+                android:text="@string/requests" />
 
             <TextView
                 style="@style/StatusContent"
@@ -247,7 +251,7 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/my_task" />
+                android:text="@string/reports" />
 
             <TextView
                 style="@style/StatusContent"
@@ -260,8 +264,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_home_button"
-            android:backgroundTint="@color/color_77e6b6"
-            android:text="@string/create_ticket"
+            android:backgroundTint="@color/color_button"
+            android:text="@{action.homeData.textBtn}"
             android:onClick="@{ () -> action.onClickCreateAsset()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

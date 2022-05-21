@@ -14,6 +14,8 @@ class MyPreference @Inject constructor(@ApplicationContext context: Context) {
         private const val SHARE_PREFERENCE_NAME = "share_preference_name"
 
         private const val USER_EMAIL = "user_email"
+        private const val ADMIN = "admin"
+        private const val EMPTY = ""
     }
 
     private val sharedPref: SharedPreferences =
@@ -27,6 +29,16 @@ class MyPreference @Inject constructor(@ApplicationContext context: Context) {
     fun getUserEmail(): String {
         Log.d(TAG, "getImageLink:${get(USER_EMAIL, String::class.java)} ")
         return get(USER_EMAIL, String::class.java)
+    }
+
+    fun saveAdmin(boolean: Boolean){
+        Log.d(TAG, "saveAdmin: $boolean ")
+        put(ADMIN, boolean)
+    }
+
+    fun getAdmin(): Boolean {
+        Log.d(TAG, "getAdmin:${get(ADMIN, String::class.java)} ")
+        return get(ADMIN, Boolean::class.java)
     }
 
     private fun <T> put(key: String, data: T) {
@@ -45,7 +57,7 @@ class MyPreference @Inject constructor(@ApplicationContext context: Context) {
 
     private fun <T> get(key: String, clazz: Class<T>): T =
         when (clazz) {
-            String::class.java -> sharedPref.getString(key, "")
+            String::class.java -> sharedPref.getString(key, EMPTY)
             Boolean::class.java -> sharedPref.getBoolean(key, false)
             Float::class.java -> sharedPref.getFloat(key, -1f)
             Double::class.java -> sharedPref.getFloat(key, -1f)

@@ -19,7 +19,7 @@ data class User(
     val isDisabled: Boolean = false, // false (con hoat dong), true (het hoat dong)
     val location: String = "",
     val type: Int = 1, // 0 admin, 1 normal user
-    val email: String
+    val email: String,
 ) {
     companion object {
         val listUserInit = listOf(
@@ -45,7 +45,7 @@ data class User(
                 location = "Quảng Bình",
                 type = 1,
                 email = "sangtran@gmail.com",
-                password = "1"
+                password = "12345678"
             )
         )
     }
