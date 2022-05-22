@@ -59,4 +59,5 @@
     <string name="state1">state</string>
     <string name="title_menu_state_pending">Pending</string>
     <string name="title_menu_state_complete">Complete</string>
+    <string name="create_new_request">Create New Request</string>
 </resources>

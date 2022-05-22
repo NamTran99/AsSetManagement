@@ -82,6 +82,15 @@
         android:id="@+id/requestFragment"
         tools:layout="@layout/fragment_request"
         android:name="com.son.finalproject.ui.home.fragments.RequestFragment"
-        android:label="RequestFragment" />
+        android:label="RequestFragment" >
+        <action
+            android:id="@+id/action_requestFragment_to_fragmentCreateRequest"
+            app:destination="@id/fragmentCreateRequest" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_create_request"
+        android:id="@+id/fragmentCreateRequest"
+        android:name="com.son.finalproject.ui.home.fragments.FragmentCreateRequest"
+        android:label="FragmentCreateRequest" />
 
 </navigation>

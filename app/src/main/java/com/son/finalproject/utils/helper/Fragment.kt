@@ -11,6 +11,7 @@ import androidx.annotation.MenuRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.son.finalproject.R
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -46,13 +47,14 @@ fun Fragment.showTimePickerDialog(
     }, year, month, dayOfMonth).show()
 }
 
-fun View.showPopUp(menu : Int){
+fun View.showPopUp(menu : Int? = R.menu.menu_state, action: (Int)->Unit){
     setOnClickListener {
         PopupMenu(context,this).apply {
-            inflate(menu)
+            inflate(menu!!)
             setOnMenuItemClickListener {item->
                 (it as? TextView)?.let {textView->
                     textView.text = item.title
+                    action.invoke(item.itemId)
                 }
                 true
             }

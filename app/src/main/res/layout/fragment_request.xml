@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -50,48 +46,16 @@
             android:layout_below="@+id/layout_header"
             android:layout_marginTop="5dp">
 
-            <TextView
-                android:id="@+id/title_manage_request"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/baloo"
-                android:gravity="center"
-                android:text="Manage Requests"
-                android:textSize="28dp"
-                android:textStyle="bold" />
-
             <RelativeLayout
                 android:id="@+id/layout_manage_request"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title_manage_request"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:text="@string/title_menu_state_pending"
-                    android:id="@+id/txt_state_request"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
-                    android:background="#DDDDDA"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawablePadding="5dp"
-                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
-                    android:elevation="5dp"
-                    android:fontFamily="@font/aclonica"
-                    android:padding="10dp"
-                    android:textColor="#041B2D" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/edt_search_request"
@@ -108,6 +72,26 @@
                     android:fontFamily="@font/aclonica"
                     android:hint="Search.."
                     android:padding="10dp"
+                    android:textColor="#041B2D" />
+
+                <TextView
+                    android:id="@+id/txt_state_request"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:autoSizeMinTextSize="@dimen/_8ssp"
+                    android:background="#DDDDDA"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:maxLines="1"
+                    android:padding="10dp"
+                    android:text="@string/title_menu_state_pending"
                     android:textColor="#041B2D" />
 
                 <com.google.android.material.button.MaterialButton
@@ -132,10 +116,69 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_manage_request"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/btn_edit_1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+
+                <Button
+                    android:id="@+id/btn_edit_2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/btn_edit_1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+
+                <Button
+                    android:id="@+id/btn_edit_3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/btn_edit_2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+
+                <Button
+                    android:id="@+id/btn_edit_4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/btn_edit_3"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+
+                <Button
+                    android:id="@+id/btn_edit_5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/btn_edit_4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="340dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableRight="@drawable/ic_baseline_edit_24" />
 
                 <ListView
                     android:id="@+id/list_request"
@@ -145,69 +188,40 @@
 
                 </ListView>
 
-                <Button
-                    android:id="@+id/btn_edit_1"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
-                <Button
-                    android:id="@+id/btn_edit_2"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_1"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
-                <Button
-                    android:id="@+id/btn_edit_3"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_2"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
-                <Button
-                    android:id="@+id/btn_edit_4"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_3"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
-                <Button
-                    android:id="@+id/btn_edit_5"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_4"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
 
             </RelativeLayout>
 
+            <TextView
+                android:id="@+id/title_manage_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="Manage Requests"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
         </RelativeLayout>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->action.floatingActionButtonClick()}"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_20sdp"
+            android:backgroundTint="@color/hF12A6D"
+            android:src="@drawable/ic_add" />
+
     </RelativeLayout>
+
+    <data>
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.home.viewmodels.RequestViewModel" />
+    </data>
 </layout>
