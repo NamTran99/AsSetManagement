@@ -45,6 +45,7 @@
     <string name="create_category">CREATE CATEGORY</string>
     <string name="create_request">Create Request</string>
     <string name="back_2_time">Please click BACK again to exit</string>
+    <string name="create_asset_successfully">Create asset successfully</string>
 
     <!--    validate string error-->
     <string name="email_error">Email is not valid </string>
@@ -52,6 +53,10 @@
     <string name="null_error">This field require not null</string>
     <string name="user_information">User Information</string>
     <string name="user_management">User Management</string>
+    <string name="manage_assets">Manage Assets</string>
+    <string name="asset_code">Asset Code</string>
+    <string name="asset_name">Asset Name</string>
+    <string name="state1">state</string>
     <string name="title_menu_state_pending">Pending</string>
     <string name="title_menu_state_complete">Complete</string>
 </resources>

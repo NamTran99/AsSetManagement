@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -81,7 +81,6 @@
                     android:id="@+id/edt_new_name_asset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
@@ -89,10 +88,10 @@
                     android:backgroundTint="#FFFFFF"
                     android:drawableStart="@drawable/ic_baseline_create_24"
                     android:drawablePadding="5dp"
-                    android:elevation="5dp"
                     android:fontFamily="@font/baloo"
                     android:hint="@string/name_of_new_asset"
                     android:padding="10dp"
+                    android:text="@={action.liveAsset.assetName}"
                     android:textColor="#041B2D"
                     android:textColorHint="#DDDDDA" />
             </RelativeLayout>
@@ -100,24 +99,21 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/layout_category_asset"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_41sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_below="@+id/layout_create_name_asset"
-                android:layout_centerHorizontal="true"
-                android:paddingStart="@dimen/_15sdp"
-                app:cardElevation="@dimen/_4sdp"
                 android:layout_marginHorizontal="@dimen/_17sdp"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp">
+                android:layout_marginBottom="2dp"
+                app:cardElevation="@dimen/_4sdp"
+               >
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:background="#FFFFFF"
                     android:elevation="5dp">
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_logo"
-                        android:layout_marginStart="11dp"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_baseline_create_24" />
@@ -130,7 +126,6 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
                         android:layout_toEndOf="@id/img_logo"
-                        android:elevation="5dp"
                         android:fontFamily="@font/baloo"
                         android:hint="@string/category"
                         android:textColor="#041B2D"
@@ -152,7 +147,6 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp">
 
-
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_new_specification_asset"
                     android:layout_width="match_parent"
@@ -169,6 +163,7 @@
                     android:fontFamily="@font/baloo"
                     android:hint="@string/specification"
                     android:padding="10dp"
+                    android:text="@={action.liveAsset.specification.specification}"
                     android:textColor="#041B2D"
                     android:textColorHint="#DDDDDA" />
             </RelativeLayout>
@@ -184,8 +179,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp">
 
-
-                <androidx.appcompat.widget.AppCompatEditText
+                <TextView
                     android:id="@+id/edt_install_date_asset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -195,15 +189,14 @@
                     android:layout_marginBottom="5dp"
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
-                    android:drawableStart="@drawable/ic_baseline_calendar_month_24"
                     android:drawablePadding="5dp"
                     android:elevation="5dp"
                     android:fontFamily="@font/baloo"
                     android:hint="@string/install_date"
-                    android:inputType="date"
                     android:padding="10dp"
                     android:textColor="#041B2D"
-                    android:textColorHint="#DDDDDA" />
+                    android:textColorHint="#DDDDDA"
+                    app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24" />
 
             </RelativeLayout>
 
@@ -233,6 +226,7 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
+                    android:id="@+id/groupRadio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toEndOf="@id/tv_state_asset"
@@ -245,6 +239,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginBottom="5dp"
+                        android:checked="true"
                         android:fontFamily="@font/baloo"
                         android:padding="10dp"
                         android:text="@string/available"
@@ -285,6 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="90dp"
                     android:backgroundTint="#E06C78"
+                    android:onClick="@{() -> action.onClickSaveButton()}"
                     android:text="@string/save"
                     android:textColor="#FBEEE6"
                     android:textSize="18sp"

@@ -1,5 +1,6 @@
 package com.son.finalproject.ui.main
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -21,7 +22,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),ActivityHelper  {
 
     private lateinit var binding: ActivityMainBinding
     private val mySharePreference: MyPreference by lazy { MyPreference(application) }
@@ -37,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         setUpController()
         checkUserAlreadyLogIn()
         initDrawerLayout()
-
     }
 
     private fun setUpController() {
@@ -79,24 +79,43 @@ class MainActivity : AppCompatActivity() {
 
     private var doubleBackToExitPressedOnce = false
 
-    // back 2 time ONLY in Home Fragment
-//    override fun onBackPressed() {
-//        when (controller.currentDestination?.id) {
-//            R.id.homeFragment -> {
-//                if (doubleBackToExitPressedOnce) {
-//                    finish()
-//                }
-//
-//                this.doubleBackToExitPressedOnce = true
-//                showToast(R.string.back_2_time)
-//                Handler(Looper.getMainLooper()).postDelayed(
-//                    { doubleBackToExitPressedOnce = false },
-//                    2000
-//                )
-//            }
-//            else ->
-//                super.onBackPressed()
-//        }
-//    }
+    override fun onBackPressed() {
+        when (controller.currentDestination?.id) {
+            R.id.homeFragment -> {
+                if (doubleBackToExitPressedOnce) {
+                    finish()
+                }
 
+                this.doubleBackToExitPressedOnce = true
+                showToast(R.string.back_2_time)
+                Handler(Looper.getMainLooper()).postDelayed(
+                    { doubleBackToExitPressedOnce = false },
+                    2000
+                )
+            }
+            else ->
+                super.onBackPressed()
+        }
+    }
+
+    override fun rotateWindow(windowRotateType: WindowRotateType) {
+        requestedOrientation = when(windowRotateType){
+            WindowRotateType.Horizontal ->{
+                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            }
+            else -> {
+                ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+            }
+        }
+    }
+
+}
+
+interface ActivityHelper{
+    fun rotateWindow(windowRotateType: WindowRotateType)
+}
+
+enum class WindowRotateType{
+    Horizontal,
+    Vertical
 }

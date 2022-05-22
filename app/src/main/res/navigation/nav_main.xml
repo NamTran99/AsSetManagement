@@ -64,7 +64,11 @@
         android:id="@+id/userManagementFragment"
         android:name="com.son.finalproject.ui.home.fragments.UserManagementFragment"
         android:label="UserManagementFragment"
-        tools:layout="@layout/fragment_user_management" />
+        tools:layout="@layout/fragment_user_management" >
+        <action
+            android:id="@+id/action_userManagementFragment_to_createAssetFragment"
+            app:destination="@id/createAssetFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/assetManageFragment"

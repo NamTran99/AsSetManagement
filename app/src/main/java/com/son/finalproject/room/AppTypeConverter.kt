@@ -3,14 +3,7 @@ package com.son.finalproject.room;
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.son.finalproject.data.Asset
 import com.son.finalproject.data.Specification
-
-/*
-    Copyright © 2022 UITS CO.,LTD
-    Created by SangTB on 5/22/2022
-*/
-
 
 /*
  vì sqlite room chỉ nhận kiểu dữ liệu nguyên thủy không chấp nhận kiểu dữ liệu khác làm thành phần trong bảng

@@ -1,8 +1,10 @@
-package com.son.finalproject.data
+package com.son.finalproject.data.joindata
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.son.finalproject.data.Category
+import com.son.finalproject.data.Specification
 import com.son.finalproject.utils.RoomExtension
 
 @Entity(
@@ -15,7 +17,7 @@ import com.son.finalproject.utils.RoomExtension
         onUpdate = ForeignKey.CASCADE
     )]
 )
-data class Asset(
+data class AssetAndCategory(
     @PrimaryKey
     var assetCode: String = "",
     var assetName: String = "",

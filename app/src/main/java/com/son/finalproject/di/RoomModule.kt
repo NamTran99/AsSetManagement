@@ -3,6 +3,7 @@ package com.son.finalproject.di
 import com.son.finalproject.room.AppDataBase
 import com.son.finalproject.room.dao.AssetDAO
 import com.son.finalproject.room.dao.CategoryDAO
+import com.son.finalproject.room.dao.SpecificationDAO
 import com.son.finalproject.room.dao.UserDAO
 import dagger.Module
 import dagger.Provides
@@ -25,4 +26,8 @@ class RoomModule {
     @Singleton
     @Provides
     fun provideCategoryDAO(db: AppDataBase): CategoryDAO = db.categoryDAO()
+
+    @Singleton
+    @Provides
+    fun specificationDAO(db: AppDataBase): SpecificationDAO = db.specificationDAO()
 }

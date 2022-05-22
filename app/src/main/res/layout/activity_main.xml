@@ -17,17 +17,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/mainContainerView"
-                android:name="androidx.navigation.fragment.NavHostFragment"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:elevation="@dimen/dp0"
-                app:defaultNavHost="true"
-                app:layout_anchorGravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:navGraph="@navigation/nav_main" />
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/mainContainerView"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:elevation="@dimen/dp0"
+                    app:defaultNavHost="true"
+                    app:layout_anchorGravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navGraph="@navigation/nav_main" />
+
+            </androidx.core.widget.NestedScrollView>
 
         </LinearLayout>
 
