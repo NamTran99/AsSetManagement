@@ -52,4 +52,6 @@
     <string name="null_error">This field require not null</string>
     <string name="user_information">User Information</string>
     <string name="user_management">User Management</string>
+    <string name="title_menu_state_pending">Pending</string>
+    <string name="title_menu_state_complete">Complete</string>
 </resources>

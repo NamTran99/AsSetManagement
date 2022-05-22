@@ -10,7 +10,6 @@ import com.son.finalproject.ui.authentication.viewmodels.AuthenticationViewModel
 import com.son.finalproject.utils.Validator
 import com.son.finalproject.utils.Validator.isValid
 import com.son.finalproject.utils.Validator.validate
-import com.son.finalproject.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

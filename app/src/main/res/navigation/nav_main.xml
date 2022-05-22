@@ -49,6 +49,9 @@
             android:name="userEmail"
             android:defaultValue="trandinhnam1199@gmail.com"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
 
     </fragment>
     <fragment
@@ -71,5 +74,10 @@
     <action
         android:id="@+id/action_global_userManagementFragment"
         app:destination="@id/homeFragment" />
+    <fragment
+        android:id="@+id/requestFragment"
+        tools:layout="@layout/fragment_request"
+        android:name="com.son.finalproject.ui.home.fragments.RequestFragment"
+        android:label="RequestFragment" />
 
 </navigation>

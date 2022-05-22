@@ -13,8 +13,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.son.finalproject.utils.findNavController
-import com.son.finalproject.utils.hideKeyboard
+import com.son.finalproject.utils.helper.findNavController
+import com.son.finalproject.utils.helper.hideKeyboard
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

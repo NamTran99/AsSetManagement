@@ -8,12 +8,10 @@ import com.son.finalproject.R
 import com.son.finalproject.base.BaseFragment
 import com.son.finalproject.databinding.FragmentSignInBinding
 import com.son.finalproject.ui.authentication.viewmodels.AuthenticationViewModel
-import com.son.finalproject.utils.Validator
 import com.son.finalproject.utils.Validator.isEmailValid
 import com.son.finalproject.utils.Validator.isPasswordValid
 import com.son.finalproject.utils.Validator.isValid
 import com.son.finalproject.utils.Validator.validate
-import com.son.finalproject.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

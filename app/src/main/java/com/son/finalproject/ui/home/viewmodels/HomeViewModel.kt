@@ -43,6 +43,10 @@ class HomeViewModel @Inject constructor(
         navigateToDestination(R.id.action_homeFragment_to_createAssetFragment)
     }
 
+    fun onClickRequest(){
+        navigateToDestination(R.id.action_homeFragment_to_requestFragment)
+    }
+
     companion object{
         private const val TYPE_ADMIN = 1
         private const val TYPE_USER = 0

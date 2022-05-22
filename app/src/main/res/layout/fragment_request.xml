@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,7 +12,6 @@
         android:layout_height="match_parent"
         tools:context=".temp.fragment.RequestFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:id="@+id/layout_header"
             android:layout_width="match_parent"
@@ -54,10 +54,10 @@
                 android:id="@+id/title_manage_request"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:gravity="center"
                 android:text="Manage Requests"
@@ -75,21 +75,21 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp">
 
-                <EditText
-                    android:id="@+id/edt_state_request"
+                <TextView
+                    android:text="@string/title_menu_state_pending"
+                    android:id="@+id/txt_state_request"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="2dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginBottom="5dp"
                     android:background="#DDDDDA"
                     android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
                     android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/ic_baseline_filter_alt_24"
                     android:elevation="5dp"
                     android:fontFamily="@font/aclonica"
-                    android:hint="State.."
                     android:padding="10dp"
                     android:textColor="#041B2D" />
 
@@ -97,11 +97,11 @@
                     android:id="@+id/edt_search_request"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_toEndOf="@+id/edt_state_request"
+                    android:layout_toEndOf="@+id/txt_state_request"
                     android:background="#DDDDDA"
                     android:backgroundTint="#F3EFEF"
                     android:elevation="5dp"
@@ -114,10 +114,10 @@
                     android:id="@+id/btn_search_request"
                     android:layout_width="54dp"
                     android:layout_height="55dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="0dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_toEndOf="@+id/edt_search_request"
                     android:backgroundTint="#F3EFEF"
                     android:drawableLeft="@drawable/ic_baseline_search_24"

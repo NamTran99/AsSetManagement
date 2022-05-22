@@ -3,6 +3,7 @@ package com.son.finalproject.ui.main
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -16,6 +17,8 @@ import com.son.finalproject.databinding.HeaderBinding
 import com.son.finalproject.utils.MyPreference
 import com.son.finalproject.utils.helper.showToast
 import dagger.hilt.android.AndroidEntryPoint
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
