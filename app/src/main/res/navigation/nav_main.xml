@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_homeFragment_to_requestFragment"
             app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_assetManageFragment"
+            app:destination="@id/assetManageFragment" />
 
     </fragment>
     <fragment

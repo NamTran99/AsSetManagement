@@ -19,5 +19,5 @@ data class Request(
     val staffCode: Int,
     val requestDate: String,
     val status: Boolean = false, // false -> request true -> complex
-    val requestedAsset: String // mã hóa
+    val assetCode: String // mã hóa
 )

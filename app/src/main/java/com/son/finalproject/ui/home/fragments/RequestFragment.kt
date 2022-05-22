@@ -17,6 +17,8 @@ class RequestFragment : BaseFragment<FragmentRequestBinding, RequestViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.action = viewModel
+
         binding.txtStateRequest.showPopUp(action = viewModel::actionItemSpinner)
     }
 }

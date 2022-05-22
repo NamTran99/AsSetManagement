@@ -11,4 +11,5 @@ abstract class ManageRepository {
     abstract suspend fun getListCategoryName(): List<Category>
     abstract suspend fun countAssetItemsByCategoryID(categoryID: Int): Int
     abstract suspend fun loadAssetAndCategory(): Map<Category ,List<Asset> >
+    abstract suspend fun getListAsset() : List<Asset>
 }

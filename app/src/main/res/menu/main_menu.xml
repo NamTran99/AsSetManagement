@@ -21,7 +21,7 @@
             android:title="@string/user_management" />
 
         <item
-            android:id="@+id/nav_request"
+            android:id="@+id/requestFragment"
             android:icon="@drawable/ic_baseline_request_quote_24"
             android:menuCategory="secondary"
             android:title="@string/requests" />

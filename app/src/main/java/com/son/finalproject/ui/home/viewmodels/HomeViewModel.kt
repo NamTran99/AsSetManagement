@@ -43,6 +43,10 @@ class HomeViewModel @Inject constructor(
         navigateToDestination(R.id.action_homeFragment_to_createAssetFragment)
     }
 
+    fun onClickAsset() {
+        navigateToDestination(R.id.action_homeFragment_to_assetManageFragment)
+    }
+
     fun onClickRequest(){
         navigateToDestination(R.id.action_homeFragment_to_requestFragment)
     }

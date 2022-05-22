@@ -8,7 +8,9 @@ import com.son.finalproject.room.dao.AssetDAO
 import com.son.finalproject.room.dao.CategoryDAO
 import com.son.finalproject.room.dao.SpecificationDAO
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class ManageRepositoryImpl @Inject constructor(
     private val assetDAO: AssetDAO,
     private val categoryDAO: CategoryDAO,
@@ -36,5 +38,9 @@ class ManageRepositoryImpl @Inject constructor(
 
     override suspend fun loadAssetAndCategory(): Map<Category ,List<Asset> >{
         return categoryDAO.loadAssetAndCategory()
+    }
+
+    override suspend fun getListAsset(): List<Asset> {
+        return assetDAO.getListAsset()
     }
 }

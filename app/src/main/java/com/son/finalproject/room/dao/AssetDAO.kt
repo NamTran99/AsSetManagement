@@ -11,4 +11,7 @@ import com.son.finalproject.utils.RoomExtension
 interface AssetDAO : BaseDao<Asset> {
     @Query("select count(*) from ${RoomExtension.TABLE_ASSET} where categoryID like :categoryID")
     suspend fun countItemByCategoryID(categoryID: Int): Int
+
+    @Query("select * from ${RoomExtension.TABLE_ASSET}")
+    suspend fun getListAsset() : List<Asset>
 }

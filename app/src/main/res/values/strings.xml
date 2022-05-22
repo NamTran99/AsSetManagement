@@ -32,6 +32,7 @@
     <string name="notavailable">NotAvailable</string>
     <string name="save">SAVE</string>
     <string name="cancel">CANCEL</string>
+    <string name="select_assigned_date">Select assigned date</string>
 
 
     <string name="sign_in_succesfully">Sign in successfully</string>

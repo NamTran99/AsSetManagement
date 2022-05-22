@@ -137,6 +137,7 @@
         <LinearLayout
             android:id="@+id/linearLayout1"
             style="@style/StatusLayout"
+            android:onClick="@{()->action.onClickAsset()}"
             android:layout_marginTop="336dp"
             app:layout_constraintEnd_toStartOf="@id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,6 +1,9 @@
 package com.son.finalproject.room.dao;
 
 import androidx.room.Dao
+import com.son.finalproject.base.BaseDao
+import com.son.finalproject.data.Request
 
 @Dao
-public class RequestDao
+interface RequestDao: BaseDao<Request> {
+}
