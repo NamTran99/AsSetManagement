@@ -1,6 +1,7 @@
 package com.son.finalproject.ui.asset.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.son.finalproject.R
@@ -37,10 +38,16 @@ class AssetViewModel @Inject constructor(
 
     fun onSelectedCategorySpinner(position: Int) = viewModelScope.launch {
         listCategoryName.value?.let {
+            setAssetCategoryID(position)
             currentCategory = it[position]
             selectedCategoryID = it[position].categoryID
             symbolsCategory = it[position].categoryName.take(2)
         }
+    }
+
+    private fun setAssetCategoryID(id: Int){
+        liveAsset.value?.categoryID = id
+        liveAsset.forceRefresh()
     }
 
     fun setItemStatus(position: Int) {
@@ -54,16 +61,39 @@ class AssetViewModel @Inject constructor(
     }
 
     fun onClickSaveButton() = viewModelScope.launch {
-        val countItemWithCategory =
-            (manageRepo.countAssetItemsByCategoryID(selectedCategoryID) + 1).toString()
-                .padStart(3, '0')
+        var countItemWithCategory  =  ""
+        val listAsset =
+            manageRepo.getAllAssetCodeByCategoryID(selectedCategoryID)
+
+        if(listAsset.isNotEmpty()){
+            countItemWithCategory = (getIDBehindSymbol(listAsset[0])+1).toString().padStart(3, '0')
+        }else{
+            countItemWithCategory = DEFAULT_ASSET_CODE_ID
+        }
+
         val futureAssetID = "$symbolsCategory$countItemWithCategory"
+
+        Log.d(TAG, "onClickSaveButton: $countItemWithCategory")
+
         liveAsset.value?.apply {
             assetCode = futureAssetID
             manageRepo.insertSpecification(specification)
-            manageRepo.specificationAsset(this)
+            manageRepo.insertAsset(this)
             showToast(R.string.create_asset_successfully)
             onBackStack()
         }
     }
+
+    /*
+    * giả sử assetcode: LA001 thì sẽ get ra 001
+    * */
+    private fun getIDBehindSymbol(value: String): Int {
+        return value.drop(2).toInt()
+    }
+
+    companion object{
+        const val DEFAULT_ASSET_CODE_ID = "001"
+    }
+
+
 }

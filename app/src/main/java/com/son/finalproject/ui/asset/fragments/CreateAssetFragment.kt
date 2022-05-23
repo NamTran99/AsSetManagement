@@ -46,7 +46,7 @@ class CreateAssetFragment : BaseFragment<FragmentCreateAssetBinding, AssetViewMo
                 onBackFragment()
             }
             edtInstallDateAsset.setOnClickListener { _ ->
-                showTimePickerDialog{
+                showTimePickerDialog {
                     Log.d(TAG, "onViewCreated: current date time - $it")
                     edtInstallDateAsset.text = it
                     viewModel.setDateTime(it)

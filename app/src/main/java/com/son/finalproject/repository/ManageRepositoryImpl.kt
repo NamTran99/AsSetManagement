@@ -16,7 +16,7 @@ class ManageRepositoryImpl @Inject constructor(
     private val categoryDAO: CategoryDAO,
     private val specificationDAO: SpecificationDAO
 ) : ManageRepository() {
-    override suspend fun specificationAsset(asset: Asset): Long {
+    override suspend fun insertAsset(asset: Asset): Long {
         return assetDAO.insert(asset)
     }
 
@@ -28,8 +28,8 @@ class ManageRepositoryImpl @Inject constructor(
         return categoryDAO.getListCategoryName()
     }
 
-    override suspend fun countAssetItemsByCategoryID(categoryID: Int): Int{
-        return assetDAO.countItemByCategoryID(categoryID)
+    override suspend fun getAllAssetCodeByCategoryID(categoryID: Int): List<String>{
+        return assetDAO.getAllAssetCodeByCategoryID(categoryID)
     }
 
     override suspend fun insertSpecification(specification: Specification):Long{

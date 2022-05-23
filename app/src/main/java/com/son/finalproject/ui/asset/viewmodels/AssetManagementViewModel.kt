@@ -19,13 +19,9 @@ class AssetManagementViewModel @Inject constructor(
     private val manageRepositoryImpl: ManageRepositoryImpl
 ) : BaseViewModel(application) {
 
-    init{
-        getAssetAndCategory()
-    }
-
     val pairAssetAndCategory = MutableLiveData(mutableListOf<Pair<Asset, Category>>())
 
-    private fun getAssetAndCategory() = viewModelScope.launch{
+    fun getAssetAndCategory() = viewModelScope.launch{
         val mapAssetCategory =  manageRepositoryImpl.loadAssetAndCategory()
 
         val mPairAssetAndCategory = mutableListOf<Pair<Asset, Category>>()

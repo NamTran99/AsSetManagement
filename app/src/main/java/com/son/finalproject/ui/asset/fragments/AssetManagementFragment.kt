@@ -30,6 +30,7 @@ class AssetManagementFragment :
 
     override fun onResume() {
 //        rotateWindow(WindowRotateType.Horizontal)
+        viewModel.getAssetAndCategory()
         super.onResume() 
     }
 
