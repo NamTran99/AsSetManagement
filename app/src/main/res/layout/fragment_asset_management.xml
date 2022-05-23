@@ -136,10 +136,10 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_toEndOf="@+id/edt_status"
                     android:layout_weight="1"
-                    android:onClick="@{() -> action.onClickCreateAsset()}"
                     android:backgroundTint="#E06C78"
                     android:elevation="5dp"
                     android:fontFamily="@font/aclonica"
+                    android:onClick="@{() -> action.onClickCreateAsset()}"
                     android:text="@string/create_new_asset"
                     android:textColor="#FBEEE6"
                     android:textSize="11sp" />

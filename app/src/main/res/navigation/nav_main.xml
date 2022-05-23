@@ -67,17 +67,17 @@
         android:id="@+id/userManagementFragment"
         android:name="com.son.finalproject.ui.home.fragments.UserManagementFragment"
         android:label="UserManagementFragment"
-        tools:layout="@layout/fragment_user_management" >
-        <action
-            android:id="@+id/action_userManagementFragment_to_createAssetFragment"
-            app:destination="@id/createAssetFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_user_management" />
 
     <fragment
         android:id="@+id/assetManageFragment"
         android:name="com.son.finalproject.ui.asset.fragments.AssetManagementFragment"
         android:label="AssetManageFragment"
-        tools:layout="@layout/fragment_asset_management" />
+        tools:layout="@layout/fragment_asset_management" >
+        <action
+            android:id="@+id/action_assetManageFragment_to_createAssetFragment"
+            app:destination="@id/createAssetFragment" />
+    </fragment>
     <action
         android:id="@+id/action_global_userManagementFragment"
         app:destination="@id/homeFragment" />

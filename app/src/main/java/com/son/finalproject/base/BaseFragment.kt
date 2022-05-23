@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.NavHostFragment
 import com.son.finalproject.utils.helper.findNavController
 import com.son.finalproject.utils.helper.hideKeyboard
 import kotlinx.coroutines.Job
@@ -20,7 +21,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 
-abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(){
+abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(), IActivityApplication{
     protected val TAG by lazy { this::class.java.name }
 
     private var _binding: T? = null
@@ -32,6 +33,10 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(
     abstract val layoutId: Int
 
     private var jopEventReceiver: Job? = null
+
+    private val activityApplication: IActivityApplication? by lazy {
+        activity as? IActivityApplication
+    }
 
 
     override fun onAttach(context: Context) {
@@ -91,6 +96,11 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(
     override fun onStop() {
         super.onStop()
         Log.d(TAG, "onStop: ")
+    }
+
+    override fun rotateWindow(windowRotateType: WindowRotateType) {
+        Log.d(TAG, "rotateWindow: ")
+        activityApplication?.rotateWindow(windowRotateType)
     }
 
     open fun showToast(content: String, duration: Int = Toast.LENGTH_SHORT) {

@@ -4,25 +4,23 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.son.finalproject.R
+import com.son.finalproject.base.IActivityApplication
+import com.son.finalproject.base.WindowRotateType
 import com.son.finalproject.databinding.ActivityMainBinding
 import com.son.finalproject.databinding.HeaderBinding
 import com.son.finalproject.utils.MyPreference
 import com.son.finalproject.utils.helper.showToast
 import dagger.hilt.android.AndroidEntryPoint
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(),ActivityHelper  {
+class MainActivity : AppCompatActivity(), IActivityApplication {
 
     private lateinit var binding: ActivityMainBinding
     private val mySharePreference: MyPreference by lazy { MyPreference(application) }
@@ -99,6 +97,7 @@ class MainActivity : AppCompatActivity(),ActivityHelper  {
     }
 
     override fun rotateWindow(windowRotateType: WindowRotateType) {
+        Log.d(TAG, "rotateWindow: ${windowRotateType.name}")
         requestedOrientation = when(windowRotateType){
             WindowRotateType.Horizontal ->{
                 ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
@@ -109,13 +108,7 @@ class MainActivity : AppCompatActivity(),ActivityHelper  {
         }
     }
 
-}
-
-interface ActivityHelper{
-    fun rotateWindow(windowRotateType: WindowRotateType)
-}
-
-enum class WindowRotateType{
-    Horizontal,
-    Vertical
+    companion object{
+        const val TAG = "activity"
+    }
 }

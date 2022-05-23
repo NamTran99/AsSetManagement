@@ -40,6 +40,6 @@ class AssetManagementViewModel @Inject constructor(
     }
 
     fun onClickCreateAsset(){
-        navigateToDestination(R.id.action_userManagementFragment_to_createAssetFragment)
+        navigateToDestination(R.id.action_assetManageFragment_to_createAssetFragment)
     }
 }
