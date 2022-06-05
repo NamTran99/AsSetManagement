@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun onClickCreateAsset() {
+    fun onClickCreateAsset() = viewModelScope.launch {
         navigateToDestination(R.id.action_homeFragment_to_createAssetFragment)
     }
 

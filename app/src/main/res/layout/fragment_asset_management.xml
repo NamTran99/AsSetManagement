@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -7,7 +8,7 @@
 
         <variable
             name="action"
-            type="com.son.finalproject.ui.asset.viewmodels.AssetManagementViewModel" />
+            type="com.son.finalproject.ui.management.asset.viewmodels.AssetManagementViewModel" />
     </data>
 
     <RelativeLayout
@@ -79,45 +80,34 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:layout_weight="2"
+                <TextView
+                    android:id="@+id/txt_state_asset"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:autoSizeMinTextSize="@dimen/_8ssp"
                     android:background="#DDDDDA"
                     android:backgroundTint="#F3EFEF"
-                    android:padding="40dp"
-                    card_view:cardElevation="4dp"
-                    card_view:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <Spinner
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@android:color/transparent"
-                            android:fontFamily="@font/aclonica"
-                            android:textColor="#041B2D" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_baseline_filter_alt_24" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:drawablePadding="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:maxLines="1"
+                    android:padding="10dp"
+                    android:text="@string/available"
+                    android:textColor="#041B2D"
+                    android:textSize="@dimen/_10sdp"
+                    card_view:drawableRightCompat="@drawable/ic_baseline_filter_alt_24" />
 
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_status"
+                    android:id="@+id/edtName"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="2dp"
                     android:layout_marginBottom="@dimen/_6sdp"
                     android:layout_toEndOf="@+id/cardView"
                     android:layout_weight="2"
@@ -126,8 +116,12 @@
                     android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
                     android:elevation="5dp"
                     android:fontFamily="@font/aclonica"
+                    android:hint="@string/search"
+                    android:paddingStart="@dimen/_10sdp"
                     android:paddingEnd="10dp"
-                    android:textColor="#041B2D" />
+                    android:textColor="#041B2D"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="RtlSymmetry" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_create_new_asset"
@@ -159,7 +153,6 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/layout_field_title"
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 

@@ -17,8 +17,9 @@ class AuthenticationViewModel @Inject constructor(
     application: Application,
     private val authRepository: AuthRepositoryImpl
 ) : BaseViewModel(application) {
-    val email = MutableLiveData(EMPTY_STRING)
-    val password = MutableLiveData(EMPTY_STRING)
+    // giả data
+    val email = MutableLiveData("trandinhnam1199@gmail.com")
+    val password = MutableLiveData("12345678")
     val rewritePassword = MutableLiveData(EMPTY_STRING)
 
     init {
@@ -70,9 +71,9 @@ class AuthenticationViewModel @Inject constructor(
     }
 
     fun clearAllField(){
-        email.value = EMPTY_STRING
-        password.value = EMPTY_STRING
-        rewritePassword.value = EMPTY_STRING
+//        email.value = EMPTY_STRING
+//        password.value = EMPTY_STRING
+//        rewritePassword.value = EMPTY_STRING
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.son.finalproject.ui.asset.fragments
+package com.son.finalproject.ui.management.asset.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,14 +10,14 @@ import androidx.fragment.app.viewModels
 import com.son.finalproject.R
 import com.son.finalproject.base.BaseFragment
 import com.son.finalproject.databinding.FragmentCreateAssetBinding
-import com.son.finalproject.ui.asset.viewmodels.AssetViewModel
+import com.son.finalproject.ui.management.asset.viewmodels.CreateAssetViewModel
 import com.son.finalproject.utils.helper.showTimePickerDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_create_asset.*
 
 @AndroidEntryPoint
-class CreateAssetFragment : BaseFragment<FragmentCreateAssetBinding, AssetViewModel>(){
-    override val viewModel: AssetViewModel by viewModels()
+class CreateAssetFragment : BaseFragment<FragmentCreateAssetBinding, CreateAssetViewModel>(){
+    override val viewModel: CreateAssetViewModel by viewModels()
     override val layoutId = R.layout.fragment_create_asset
     private lateinit var adapter: ArrayAdapter<String>
 

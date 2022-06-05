@@ -1,4 +1,4 @@
-package com.son.finalproject.ui.asset.viewmodels
+package com.son.finalproject.ui.management.asset.viewmodels
 
 import android.app.Application
 import android.util.Log
@@ -15,14 +15,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AssetViewModel @Inject constructor(
+class CreateAssetViewModel @Inject constructor(
     application: Application,
     private val manageRepo: ManageRepositoryImpl
 ) : BaseViewModel(application) {
 
-
     val liveAsset = MutableLiveData(Asset())
-    var selectedCategoryID = 0
+
+    private var selectedCategoryID = 0
     private var currentCategory: Category? = null
     private var symbolsCategory = ""
 
@@ -61,14 +61,14 @@ class AssetViewModel @Inject constructor(
     }
 
     fun onClickSaveButton() = viewModelScope.launch {
-        var countItemWithCategory  =  ""
+        var countItemWithCategory: String
         val listAsset =
             manageRepo.getAllAssetCodeByCategoryID(selectedCategoryID)
 
-        if(listAsset.isNotEmpty()){
-            countItemWithCategory = (getIDBehindSymbol(listAsset[0])+1).toString().padStart(3, '0')
+        countItemWithCategory = if(listAsset.isNotEmpty()){
+            (getIDBehindSymbol(listAsset[0])+1).toString().padStart(3, '0')
         }else{
-            countItemWithCategory = DEFAULT_ASSET_CODE_ID
+            DEFAULT_ASSET_CODE_ID
         }
 
         val futureAssetID = "$symbolsCategory$countItemWithCategory"
@@ -94,6 +94,4 @@ class AssetViewModel @Inject constructor(
     companion object{
         const val DEFAULT_ASSET_CODE_ID = "001"
     }
-
-
 }

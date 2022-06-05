@@ -1,5 +1,6 @@
 package com.son.finalproject.base
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +17,13 @@ abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewBinding> :
     var listener: ((view : View, item : T, position : Int)->Unit )? = null
 
     fun updateItems(items: MutableList<T>) {
+        Log.d("TAG", "updateItems: ${this.items}")
         val taskDiffCallBack = BaseDiffCallBack<T>(this.items,items)
         val diffResult = DiffUtil.calculateDiff(taskDiffCallBack)
         diffResult.dispatchUpdatesTo(this)
         this.items.clear()
         this.items.addAll(items)
+        Log.d("TAG", "updateItems: ${this.items}")
     }
 
     @get:LayoutRes

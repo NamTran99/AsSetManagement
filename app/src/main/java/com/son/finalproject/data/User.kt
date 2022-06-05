@@ -8,22 +8,28 @@ import com.son.finalproject.utils.RoomExtension
 // Tạo các NHIỀU trường nào là unique, ở đây là trường <email>, tableNem: tạo tên bảng
 @Entity(indices = [Index(value = ["email"], unique = true)], tableName = RoomExtension.TABLE_USER)
 data class User(
-    @PrimaryKey(autoGenerate = true)
-    val staffCode: Int? = null,
-    val firstName: String = "",
-    val lastName: String = "",
-    val password: String,
-    val dateOfBirth: String = "",
-    val joinDate: String = "",
-    val gender: Int = 2, // 0 nam, 1 nu , 2 other
-    val isDisabled: Boolean = false, // false (con hoat dong), true (het hoat dong)
-    val location: String = "",
-    val type: Int = 1, // 0 admin, 1 normal user
-    val email: String,
+    @PrimaryKey
+    var staffCode: String = "",
+    var firstName: String = "",
+    var lastName: String = "",
+    var fullName: String = "",
+    var password: String = "" ,
+    var dateOfBirth: String = "",
+    var joinDate: String = "",
+    var gender: Int = 2, // 0 nam, 1 nu , 2 other
+    var isDisabled: Boolean = false, // false (con hoat dong), true (het hoat dong)
+    var location: String = "",
+    var type: Int = 1, // 0 admin, 1 normal user
+    var email: String = "",
 ) {
+    override fun hashCode(): Int {
+        return staffCode.hashCode()
+    }
+
     companion object {
         val listUserInit = listOf(
             User(
+                staffCode = "SD0001",
                 firstName = "Nam",
                 lastName = "Tran Dinh",
                 dateOfBirth = "06/11/1999",
@@ -36,6 +42,7 @@ data class User(
                 password = "12345678"
             ),
             User(
+                staffCode = "SD0002",
                 firstName = "Sang",
                 lastName = "Thai Ba",
                 dateOfBirth = "06/11/1999",

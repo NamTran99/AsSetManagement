@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:src="@drawable/ic_baseline_perm_contact_calendar_24"></ImageView>
+            android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:fontFamily="@font/baloo"
             android:text="IT Asset Management"
             android:textSize="24sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
             android:fontFamily="@font/aclonica"
             android:text="Hoa Sen University"
             android:textSize="14sp"
-            android:textStyle="italic"></TextView>
+            android:textStyle="italic" />
 
     </LinearLayout>
 
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:text="Create New Assignment"
             android:textSize="28dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/layout_user_assignment"
@@ -87,7 +87,7 @@
                 android:hint="Select the user"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_search_user_assignment"
@@ -100,7 +100,7 @@
                 android:layout_toEndOf="@+id/edt_select_user_assignment"
                 android:backgroundTint="#F3EFEF"
                 android:drawableLeft="@drawable/ic_baseline_search_24"
-                android:elevation="5dp"></com.google.android.material.button.MaterialButton>
+                android:elevation="5dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -132,7 +132,7 @@
                 android:hint="Select the asset"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_search_asset_assignment"
@@ -145,7 +145,7 @@
                 android:layout_toEndOf="@+id/edt_select_asset_assignment"
                 android:backgroundTint="#F3EFEF"
                 android:drawableLeft="@drawable/ic_baseline_search_24"
-                android:elevation="5dp"></com.google.android.material.button.MaterialButton>
+                android:elevation="5dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -178,7 +178,7 @@
                 android:inputType="date"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
 
         </RelativeLayout>
 
@@ -211,11 +211,8 @@
                 android:hint="Input some note here"
                 android:padding="10dp"
                 android:textColor="#041B2D"
-                android:textColorHint="#DDDDDA"></EditText>
+                android:textColorHint="#DDDDDA" />
         </RelativeLayout>
-
-
-
 
         <RelativeLayout
             android:id="@+id/layout_save_cancel_assignment"

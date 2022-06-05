@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.management.user.viewmodels.UserManagementViewModel" />
     </data>
 
     <RelativeLayout
@@ -21,7 +25,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
@@ -30,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
-                android:text="IT Asset Management"
+                android:text="@string/it_asset_management"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -38,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Hoa Sen University"
+                android:text="@string/hoa_sen_university"
                 android:textSize="14sp"
                 android:textStyle="italic" />
 
@@ -60,8 +64,8 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:gravity="center"
-                android:text="Manage Users"
-                android:textSize="28dp"
+                android:text="@string/manage_users"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <RelativeLayout
@@ -75,7 +79,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp">
 
-                <EditText
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/edt_type_user"
                     android:layout_width="95dp"
                     android:layout_height="wrap_content"
@@ -89,11 +93,11 @@
                     android:drawablePadding="5dp"
                     android:elevation="5dp"
                     android:fontFamily="@font/aclonica"
-                    android:hint="Type"
+                    android:hint="@string/type"
                     android:padding="10dp"
                     android:textColor="#041B2D" />
 
-                <EditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_search_user"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
@@ -106,22 +110,9 @@
                     android:backgroundTint="#F3EFEF"
                     android:elevation="5dp"
                     android:fontFamily="@font/aclonica"
-                    android:hint="Search...."
+                    android:hint="@string/search1"
                     android:padding="10dp"
                     android:textColor="#041B2D" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_search_user"
-                    android:layout_width="54dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_toEndOf="@+id/edt_search_user"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableLeft="@drawable/ic_baseline_search_24"
-                    android:elevation="5dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_create_new_user"
@@ -131,100 +122,71 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_toEndOf="@+id/btn_search_user"
+                    android:layout_toEndOf="@+id/edt_search_user"
                     android:backgroundTint="#E06C78"
                     android:drawablePadding="5dp"
                     android:elevation="5dp"
                     android:fontFamily="@font/baloo"
+                    android:onClick="@{()-> action.onClickCreateUser()}"
                     android:padding="5dp"
-                    android:text="Create New User"
+                    android:text="@string/create_new_user"
                     android:textColor="#FBEEE6"
-                    android:textSize="14dp" />
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/user_layout"
+            <HorizontalScrollView
+                android:id="@+id/fieldParentLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_manage_user"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp">
+                android:layout_below="@+id/layout_manage_user">
 
-                <ListView
-                    android:id="@+id/list_user"
-                    android:layout_width="match_parent"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_field_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                </ListView>
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/staff_code" />
 
-                <Button
-                    android:id="@+id/btn_edit_1"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/full_name" />
 
-                <Button
-                    android:id="@+id/btn_edit_2"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_1"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/user_name" />
 
-                <Button
-                    android:id="@+id/btn_edit_3"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_2"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/joined_date" />
 
-                <Button
-                    android:id="@+id/btn_edit_4"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_3"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
-
-                <Button
-                    android:id="@+id/btn_edit_5"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_below="@+id/btn_edit_4"
-                    android:layout_marginStart="340dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#F3EFEF"
-                    android:drawableRight="@drawable/ic_baseline_edit_24" />
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/type" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </RelativeLayout>
-
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="vertical"
+                        android:layout_below="@id/layout_field_title"/>
+                </RelativeLayout>
+            </HorizontalScrollView>
         </RelativeLayout>
-
     </RelativeLayout>
 </layout>

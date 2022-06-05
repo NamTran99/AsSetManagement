@@ -47,6 +47,7 @@
     <string name="create_request">Create Request</string>
     <string name="back_2_time">Please click BACK again to exit</string>
     <string name="create_asset_successfully">Create asset successfully</string>
+    <string name="create_user_successfully">Create user successfully</string>
 
     <!--    validate string error-->
     <string name="email_error">Email is not valid </string>
@@ -57,8 +58,30 @@
     <string name="manage_assets">Manage Assets</string>
     <string name="asset_code">Asset Code</string>
     <string name="asset_name">Asset Name</string>
-    <string name="state1">state</string>
+    <string name="state1">State</string>
     <string name="title_menu_state_pending">Pending</string>
     <string name="title_menu_state_complete">Complete</string>
     <string name="create_new_request">Create New Request</string>
+    <string name="all">All</string>
+    <string name="not_available">Not Available</string>
+    <string name="search">Search..</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="select_date_of_birth">Select date of birth</string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="select_joined_date">Select joined date</string>
+    <string name="choose_type">Choose type</string>
+    <string name="create_new_user">Create New User</string>
+    <string name="admin">Admin</string>
+    <string name="type">Type</string>
+    <string name="staff_code">Staff Code</string>
+    <string name="full_name">Full Name</string>
+    <string name="user_name">User Name</string>
+    <string name="joined_date">Joined Date</string>
+
+    <string name="full_name_format">%s %s</string>
+    <string name="search1">Search....</string>
+    <string name="manage_users">Manage Users</string>
 </resources>

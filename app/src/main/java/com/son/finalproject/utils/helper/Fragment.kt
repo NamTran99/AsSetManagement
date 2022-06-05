@@ -2,16 +2,16 @@ package com.son.finalproject.utils.helper
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.PopupMenu
 import android.widget.TextView
-import androidx.annotation.LayoutRes
-import androidx.annotation.MenuRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.son.finalproject.R
+import java.nio.file.Files.size
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -47,10 +47,10 @@ fun Fragment.showTimePickerDialog(
     }, year, month, dayOfMonth).show()
 }
 
-fun View.showPopUp(menu : Int? = R.menu.menu_state, action: (Int)->Unit){
+fun View.showPopUp(menu : Int = R.menu.menu_request_state, action: (Int)->Unit){
     setOnClickListener {
         PopupMenu(context,this).apply {
-            inflate(menu!!)
+            inflate(menu)
             setOnMenuItemClickListener {item->
                 (it as? TextView)?.let {textView->
                     textView.text = item.title

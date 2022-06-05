@@ -59,28 +59,20 @@
     </fragment>
     <fragment
         android:id="@+id/createAssetFragment"
-        android:name="com.son.finalproject.ui.asset.fragments.CreateAssetFragment"
+        android:name="com.son.finalproject.ui.management.asset.fragments.CreateAssetFragment"
         android:label="CreateAssetFragment"
         tools:layout="@layout/fragment_create_asset" />
 
     <fragment
-        android:id="@+id/userManagementFragment"
-        android:name="com.son.finalproject.ui.home.fragments.UserManagementFragment"
-        android:label="UserManagementFragment"
-        tools:layout="@layout/fragment_user_management" />
-
-    <fragment
         android:id="@+id/assetManageFragment"
-        android:name="com.son.finalproject.ui.asset.fragments.AssetManagementFragment"
+        android:name="com.son.finalproject.ui.management.asset.fragments.AssetManagementFragment"
         android:label="AssetManageFragment"
         tools:layout="@layout/fragment_asset_management" >
         <action
             android:id="@+id/action_assetManageFragment_to_createAssetFragment"
             app:destination="@id/createAssetFragment" />
     </fragment>
-    <action
-        android:id="@+id/action_global_userManagementFragment"
-        app:destination="@id/homeFragment" />
+
     <fragment
         android:id="@+id/requestFragment"
         tools:layout="@layout/fragment_request"
@@ -95,5 +87,20 @@
         android:id="@+id/fragmentCreateRequest"
         android:name="com.son.finalproject.ui.home.fragments.FragmentCreateRequest"
         android:label="FragmentCreateRequest" />
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.son.finalproject.ui.management.user.fragments.CreateUserFragment"
+        android:label="CreateUserFragment"
+        tools:layout="@layout/fragment_create_user"/>
+
+    <fragment
+        android:id="@+id/userManagementFragment"
+        android:name="com.son.finalproject.ui.management.user.fragments.UserManagementFragment"
+        android:label="UserManagementFragment"
+        tools:layout="@layout/fragment_user_management">
+        <action
+            android:id="@+id/action_userManagementFragment_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
+    </fragment>
 
 </navigation>

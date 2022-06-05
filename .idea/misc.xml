@@ -6,6 +6,8 @@
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/bg_home_button.xml" value="0.2035" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/bg_home_status.xml" value="0.1765" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/ic_bell.xml" value="0.212" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/drawable/ic_remove.xml" value="0.169" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/font/aclonica.xml" value="0.2515625" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_create_asset.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_create_assignment.xml" value="0.25416666666666665" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_create_user.xml" value="0.25416666666666665" />
@@ -14,9 +16,10 @@
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_sign_up.xml" value="0.19947916666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/activity_splash.xml" value="0.19947916666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset.xml" value="0.152" />
-        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset_management.xml" value="0.25025641025641027" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_asset_management.xml" value="0.12365591397849462" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_assignment.xml" value="0.10989583333333333" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_create_asset.xml" value="0.176" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_create_user.xml" value="0.4" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_report.xml" value="0.10989583333333333" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_request.xml" value="0.16979166666666667" />
@@ -25,7 +28,16 @@
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_splash.xml" value="0.19947916666666668" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_user.xml" value="0.16979166666666667" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/fragment_user_management.xml" value="0.136" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_asset_spinner.xml" value="0.1984375" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_field_asset_management.xml" value="0.23854166666666668" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_field_management.xml" value="0.1984375" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_field_user_management.xml" value="0.1" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/layout/item_field_usert_management.xml" value="0.25416666666666665" />
         <entry key="..\:/Workstation/FinalProject/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/menu/menu_asset_state.xml" value="0.23854166666666668" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/menu/menu_state.xml" value="0.23854166666666668" />
+        <entry key="..\:/Workstation/FinalProject/app/src/main/res/menu/menu_user_type.xml" value="0.23802083333333332" />
         <entry key="..\:/android/android_kotlin/AsSetManagement/app/src/main/res/drawable/bg_home.xml" value="0.1485" />
         <entry key="..\:/android/android_kotlin/AsSetManagement/app/src/main/res/drawable/bg_home_button.xml" value="0.18" />
         <entry key="..\:/android/android_kotlin/AsSetManagement/app/src/main/res/drawable/bg_home_top_viewgroup.xml" value="0.1485" />
