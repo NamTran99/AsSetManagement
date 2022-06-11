@@ -1,14 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.management.return_asset.fragments.ReturnManagementFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="isAdminType"
+            type="Boolean" />
+
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.management.return_asset.viewmodels.ReturnViewModel" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:background="@drawable/background"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="@string/it_asset_management"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="@string/hoa_sen_university"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_header"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/title_manage_assets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="@{isAdminType?@string/manage_returning:@string/manage_issued_asset}"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_manage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_manage_assets"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/edt_type_user"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:autoSizeMaxTextSize="@dimen/_12sdp"
+                    android:autoSizeMinTextSize="@dimen/_5sdp"
+                    android:autoSizeTextType="uniform"
+                    android:background="#DDDDDA"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="left"
+                    android:hint="@string/type"
+                    android:maxLines="1"
+                    android:padding="10dp"
+                    android:textColor="#041B2D"
+                    tools:ignore="RtlCompat" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/cardView"
+                    android:layout_weight="2"
+                    android:background="#DDDDDA"
+                    android:backgroundTint="#F3EFEF"
+                    android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:hint="@string/search"
+                    android:padding="10dp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#041B2D"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="RtlSymmetry" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_manage">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_field_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/no" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/asset_code" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/asset_name" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/assigned_by" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/assigned_date" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
+                            android:text="@string/state1" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <RelativeLayout
+                        android:id="@+id/asset_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/layout_field_title"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerAssignment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </HorizontalScrollView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

@@ -13,4 +13,7 @@ import com.son.finalproject.utils.RoomExtension
 interface AssignmentDAO : BaseDao<Assignment> {
     @Query("select * from ${RoomExtension.TABLE_ASSIGNMENT}")
     suspend fun getAllAssignment() : List<Assignment>
+
+    @Query("select * from ${RoomExtension.TABLE_ASSIGNMENT} where userCode = :userID")
+    suspend fun getAssignmentByUserID(userID: String): List<Assignment>
 }

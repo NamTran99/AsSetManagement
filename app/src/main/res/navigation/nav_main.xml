@@ -151,5 +151,9 @@
             android:id="@+id/action_requestManagementFragment_to_fragmentCreateRequest"
             app:destination="@id/fragmentCreateRequest" />
     </fragment>
+    <fragment
+        android:id="@+id/returnManagementFragment"
+        android:name="com.son.finalproject.ui.management.return_asset.fragments.ReturnManagementFragment"
+        android:label="ReturnManagementFragment" />
 
 </navigation>

@@ -86,15 +86,17 @@
                 style="@style/HomeNumber"
                 android:text="@{String.valueOf(action.homeData.requestPending)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:text="15"/>
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                tools:text="15" />
 
             <TextView
                 android:id="@+id/textView4"
                 style="@style/HomeTask"
                 android:text="@string/request_pending"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView" />
+                app:layout_constraintEnd_toStartOf="@+id/line1"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -102,8 +104,9 @@
                 android:layout_marginBottom="148dp"
                 android:text="@{String.valueOf(action.homeData.requestAccept)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/line1"
-                tools:text="15"/>
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                tools:text="15" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -111,7 +114,8 @@
                 android:layout_marginBottom="96dp"
                 android:text="@string/request_complete"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/line2"
+                app:layout_constraintStart_toEndOf="@+id/line1"
                 app:layout_constraintTop_toTopOf="@+id/textView4" />
 
             <TextView
@@ -120,8 +124,9 @@
                 android:layout_marginBottom="148dp"
                 android:text="@{String.valueOf(action.homeData.assetsAvaiable)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/line2"
-                tools:text="15"/>
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                tools:text="15" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -129,7 +134,8 @@
                 android:layout_marginBottom="96dp"
                 android:text="@string/assets_avaiable"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/line2"
                 app:layout_constraintTop_toTopOf="@+id/textView5"
                 app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -159,16 +165,17 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/assets" />
+                android:text="@{action.homeData.textBox1}" />
 
             <TextView
                 style="@style/StatusContent"
-                android:text="34 new task added" />
+                android:text="@{action.homeData.content1}" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             style="@style/StatusLayout"
+            android:onClick="@{() -> action.onClickAssignment()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linearLayout1"
             app:layout_constraintTop_toTopOf="@+id/linearLayout1">
@@ -194,13 +201,13 @@
 
             <TextView
                 style="@style/StatusContent"
-                android:text="34 new task added" />
+                android:text="@{action.homeData.content2}" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
             style="@style/StatusLayout"
-            android:onClick="@{()->action.onClickRequest()}"
+            android:onClick="@{()->action.onClickReport()}"
             android:layout_marginTop="28dp"
             app:layout_constraintEnd_toStartOf="@id/linearLayout4"
             app:layout_constraintStart_toStartOf="parent"
@@ -222,16 +229,17 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/requests" />
+                android:text="@{action.homeData.textBox3}" />
 
             <TextView
                 style="@style/StatusContent"
-                android:text="34 new task added" />
+                android:text="@{action.homeData.content3}" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout4"
             style="@style/StatusLayout"
+            android:onClick="@{() -> action.onClickRequest()}"
             android:layout_marginStart="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linearLayout3"
@@ -253,11 +261,13 @@
 
             <TextView
                 style="@style/StatusName"
-                android:text="@string/reports" />
+                android:text="@{action.homeData.textBox4}" />
 
             <TextView
                 style="@style/StatusContent"
-                android:text="34 new task added" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{action.homeData.content4}" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton

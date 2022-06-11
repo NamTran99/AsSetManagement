@@ -1,6 +1,7 @@
 package com.son.finalproject.room.dao;
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Query
 import com.son.finalproject.base.BaseDao
 import com.son.finalproject.data.Request
@@ -13,5 +14,11 @@ interface RequestDAO: BaseDao<Request> {
     suspend fun getAllRequest(): List<Request>
 
     @Query("select * from ${RoomExtension.TABLE_REQUEST} where staffCode = :userID")
+    suspend fun getAllRequestByUserID(userID: String): List<Request>
+
+    @Query("select * from ${RoomExtension.TABLE_REQUEST} where staffCode = :userID")
     suspend fun getRequestByUserID(userID: String): List<Request>
+
+    @Query("delete from ${RoomExtension.TABLE_REQUEST} where assetCode = :assetCode")
+    suspend fun deleteRequestByAssetCode(assetCode: String)
 }

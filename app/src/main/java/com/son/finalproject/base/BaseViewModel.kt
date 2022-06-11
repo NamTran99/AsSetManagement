@@ -17,14 +17,17 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     protected val evenSender = Channel<AppEvent>()
     val eventReceiver = evenSender.receiveAsFlow().conflate()
 
+    // My SharePreferences: Kho data ở local trong android
     val mySharedPreferences = MyPreference(application.applicationContext)
 
+    // tắt app
     override fun onClickClose() {
         viewModelScope.launch {
             evenSender.send(AppEvent.OnCloseApp)
         }
     }
 
+    // quay về màn hình trước
     override fun onBackStack() {
         viewModelScope.launch {
             evenSender.send(AppEvent.OnBackScreen)
@@ -33,6 +36,7 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
 
     fun getString(idString: Int) = getApplication<Application>().resources.getString(idString)
 
+    // Chuyển hướng sang screen mong muốn
     fun navigateToDestination(action: Int, bundle: Bundle? = null) = viewModelScope.launch {
         evenSender.send(
             AppEvent.OnNavigation(action, bundle)
@@ -45,12 +49,13 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
         )
     }
 
+    // hiện toast màn hình
     fun showToast(content: String)= viewModelScope.launch{
         evenSender.send(
             AppEvent.OnShowToast(content)
         )
     }
-
+    // hiện toast màn hình
     fun showToast(contentID: Int) = viewModelScope.launch {
         evenSender.send(
             AppEvent.OnShowToast(getString(contentID))

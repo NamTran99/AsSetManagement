@@ -46,6 +46,21 @@ data class User(
             ),
             User(
                 staffCode = "SD0002",
+                firstName = "Nam",
+                lastName = "Tran Dinh",
+                fullName = "Tran Dinh Nam",
+                dateOfBirth = "06/11/1999",
+                joinDate = "19/05/2022",
+                gender = 0,
+                userName = "HoangTuGio",
+                isDisabled = false,
+                location = "Quảng Bình",
+                type = 0,
+                email = "hoasen@gmail.com",
+                password = "12345678"
+            ),
+            User(
+                staffCode = "SD0003",
                 firstName = "Sang",
                 lastName = "Thai Ba",
                 fullName = "Thai Ba Sang",

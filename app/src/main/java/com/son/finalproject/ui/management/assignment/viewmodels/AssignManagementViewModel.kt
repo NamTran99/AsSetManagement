@@ -46,19 +46,19 @@ class AssignManagementViewModel @Inject constructor(
         }
         filterUser()
     }
-
+// filter khi search text box được input
     fun onSearchTextChange(text: String) {
-        filterByString = text
+        filterByString = text.lowercase()
         filterUser()
     }
-
+    // xóa assignment
     fun removeAssignment(assignment: Assignment) = viewModelScope.launch {
         if (manageRepositoryImpl.removeAssignment(assignment) > 0) {
             showToast(R.string.remove_assignment_successfully)
             liveListAssignment.value = getAllAssignment()
         }
     }
-
+    // filter user
     private fun filterUser() = viewModelScope.launch {
         val allAssignment = getAllAssignment()
         liveListAssignment.value = (if (filterByState != 3) {
@@ -66,13 +66,13 @@ class AssignManagementViewModel @Inject constructor(
                 assignment.status == filterByState
             }
         } else allAssignment).filter {
-            it.assetCode.contains(filterByString) ||
-                    it.asset.assetName.contains(filterByString) ||
-                    it.user.userName.contains(filterByString) ||
-                    it.assignedDate.contains(filterByString)
+            it.assetCode.lowercase().contains(filterByString) ||
+                    it.asset.assetName.lowercase().contains(filterByString) ||
+                    it.user.userName.lowercase().contains(filterByString) ||
+                    it.assignedDate.lowercase().contains(filterByString)
         }
     }
 
     private suspend fun getAllAssignment() =
-        manageRepositoryImpl.getAllAssignment()
+        manageRepositoryImpl.getAllAssignment().filter { listOf(0,1,2,4).contains(it.status) }
 }

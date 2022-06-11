@@ -19,6 +19,6 @@ data class Return(
     val assignmentID: Int,
     val requestedByID: Int,
     val returnDate: String,
-    val status: Int, // cần làm rõ
+    val status: Int, //0 waiting, 1 declined, 2 completed,
     val assignedBy: Int,
 )

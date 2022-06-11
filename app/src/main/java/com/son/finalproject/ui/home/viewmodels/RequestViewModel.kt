@@ -51,7 +51,7 @@ class RequestViewModel @Inject constructor(
 
     // Hỗ trọ filter trong search
     fun onSearchTextChange(text: String) {
-        filterString = text
+        filterString = text.lowercase()
         filterRequest()
     }
 
@@ -60,14 +60,16 @@ class RequestViewModel @Inject constructor(
         val allRequest = getRequestByUser()
         Log.d(TAG, "filterRequest: getRequest - $allRequest")
         liveRequest.value = allRequest.filter { request ->
-            request.status == stateFilter && (request.asset.assetName.contains(filterString)
-                    || request.assetCode.contains(filterString)
+            request.status == stateFilter && (request.asset.assetName.lowercase().contains(filterString)
+                    || request.assetCode.lowercase().contains(filterString)
                     )
         }
     }
 
+    //Thực hiện logic khi nhấn nút accept Request
     fun onAcceptRequest(request: Request) = viewModelScope.launch {
-        val assignBy = mySharedPreferences.getUserID()
+        val adminID = mySharedPreferences.getUserID()
+        val assignBy = manageRepositoryImpl.getUserByID(adminID).fullName
 
         val assignment = Assignment(
             userCode = request.user.staffCode,
@@ -85,7 +87,7 @@ class RequestViewModel @Inject constructor(
         showToast(R.string.accept_request_successfully)
         filterRequest()
     }
-
+    //Thực hiện logic khi nhấn nút remove Request
     fun onRemoveRequest(request: Request) = viewModelScope.launch {
         if (manageRepositoryImpl.removeRequest(request) != 0  )
         {
@@ -93,7 +95,7 @@ class RequestViewModel @Inject constructor(
             filterRequest()
         }
     }
-
+    //Thực hiện logic khi nhấn nút decline Request
     fun onDeclinedRequest(request: Request) = viewModelScope.launch{
         val assignBy = mySharedPreferences.getUserID()
 
@@ -112,14 +114,13 @@ class RequestViewModel @Inject constructor(
         filterRequest()
     }
 
+    // lấy dữ liệu request theo loại user đang đăng nhập
+    private suspend fun getRequestByUser() =  if (isAdminModel) getAllRequest() else getAllRequestByUserID()
 
-    private suspend fun getRequestByUser() =  if (isAdminModel) getAllRequest() else getAllRequestByUser()
-
+    // lấy tất cả dữ liệu request
     private suspend fun getAllRequest() =
         manageRepositoryImpl.getAllRequest()
-
-    private suspend fun getAllRequestByUser() =
+    // lấy tất cả dữ liệu request theo staff ID
+    private suspend fun getAllRequestByUserID() =
         manageRepositoryImpl.getRequestByUserID(mySharedPreferences.getUserID())
-
-
 }

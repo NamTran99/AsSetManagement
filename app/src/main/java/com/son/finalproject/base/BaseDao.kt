@@ -2,6 +2,7 @@ package com.son.finalproject.base
 
 import androidx.room.*
 
+// Nếu muốn trao đổi trực tiếp về code, bug thì liên hệ: 0918780192
 // interface base room DAO cho data base hỗ trợ thêm, xóa , sửa
 @Dao
 interface BaseDao<T> {

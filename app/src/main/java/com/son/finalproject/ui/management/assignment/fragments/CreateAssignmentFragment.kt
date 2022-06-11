@@ -30,6 +30,7 @@ class CreateAssignmentFragment :
             action = viewModel
             lifecycleOwner = viewLifecycleOwner
 
+            // truyền dữ liệu vào User vào spinner
             spinnerUser.adapter = userAdapter
             spinnerUser.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
@@ -46,7 +47,7 @@ class CreateAssignmentFragment :
                 }
 
             }
-
+            // truyền dữ liệu vào Asset vào spinner
             spinnerAsset.adapter = assetAdapter
             spinnerAsset.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(

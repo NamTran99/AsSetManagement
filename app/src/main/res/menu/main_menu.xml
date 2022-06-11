@@ -39,6 +39,11 @@
                     android:icon="@drawable/ic_baseline_report_24"
                     android:menuCategory="secondary"
                     android:title="@string/assign_management" />
+
+                <item
+                    android:id="@+id/returnManagementFragment"
+                    android:menuCategory="secondary"
+                    android:title="@string/issued_asset"/>
             </group>
         </menu>
     </item>

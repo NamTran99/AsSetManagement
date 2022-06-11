@@ -36,7 +36,7 @@ class AssetManagementViewModel @Inject constructor(
         Log.d(TAG, "getAssetAndCategory: $_pairAssetAndCategory")
         pairAssetAndCategory.value = _pairAssetAndCategory
     }
-
+    // CHuyển sang màn hình tạo asset khi nhấn nút "tạo asset"
     fun onClickCreateAsset() {
         navigateToDestination(R.id.action_assetManageFragment_to_createAssetFragment)
     }
@@ -55,11 +55,13 @@ class AssetManagementViewModel @Inject constructor(
         filterAssetList()
     }
 
+    // filter khi ô search thay đổi chữ
     fun onSearchNameTextChange(name: String) {
-        filterName = name
+        filterName = name.lowercase()
         filterAssetList()
     }
 
+    // tiến hành filter
     private fun filterAssetList() {
         pairAssetAndCategory.value = (if (filterStatusID != FILTER_DEFAULT_STATUS_ID) {
             _pairAssetAndCategory.filter { pair ->
@@ -68,14 +70,15 @@ class AssetManagementViewModel @Inject constructor(
         } else {
             _pairAssetAndCategory
         }).filter {
-            it.first.assetCode.contains(filterName) ||
-                    it.first.assetName.contains(filterName) ||
-                    it.second.categoryName.contains(
+            it.first.assetCode.lowercase().contains(filterName) ||
+                    it.first.assetName.lowercase().contains(filterName) ||
+                    it.second.categoryName.lowercase().contains(
                         filterName
                     )
         }.toMutableList()
     }
 
+    // xóa Asset
     fun removeAsset(asset: Asset) = viewModelScope.launch{
         if (manageRepositoryImpl.removeAsset(asset) >=0){
             showToast(R.string.remove_asset_successfully)

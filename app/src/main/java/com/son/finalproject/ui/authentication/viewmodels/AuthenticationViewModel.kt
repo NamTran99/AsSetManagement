@@ -64,12 +64,13 @@ class AuthenticationViewModel @Inject constructor(
         }
     }
 
+    // Kiểm tra đã đăng nhập tài khoản nào chưa nếu rồi thì di chuyển vào màn trong
     fun checkAccount() {
         if(mySharedPreferences.getUserEmail() != EMPTY_STRING){
             navigateToDestination(R.id.action_signInFragment_to_homeFragment)
         }
     }
-
+    // xóa data trong ô
     fun clearAllField(){
         email.value = EMPTY_STRING
         password.value = EMPTY_STRING

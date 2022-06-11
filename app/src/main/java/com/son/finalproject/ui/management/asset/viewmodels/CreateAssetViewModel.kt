@@ -31,11 +31,11 @@ class CreateAssetViewModel @Inject constructor(
     }
 
     val listCategoryName = MutableLiveData(listOf<Category>())
-
+    // lấy dữ liệu category
     private fun getListCategory() = viewModelScope.launch {
         listCategoryName.value = manageRepo.getListCategoryName()
     }
-
+    // THực hiện logic khi chọn thể loại Category
     fun onSelectedCategorySpinner(position: Int) = viewModelScope.launch {
         listCategoryName.value?.let {
             setAssetCategoryID(position)
@@ -44,22 +44,22 @@ class CreateAssetViewModel @Inject constructor(
             symbolsCategory = it[position].categoryName.take(2)
         }
     }
-
+    // lưu dữ liệu category khi ng dùng chọn
     private fun setAssetCategoryID(id: Int) {
         liveAsset.value?.categoryID = id
         liveAsset.forceRefresh()
     }
-
+    // lưu dữ liệu status khi ng dùng chon
     fun setItemStatus(position: Int) {
         liveAsset.value?.status = position
         liveAsset.forceRefresh()
     }
-
+    // lưu dữ liệu ngày tháng
     fun setDateTime(dateTime: String) {
         liveAsset.value?.installDate = dateTime
         liveAsset.forceRefresh()
     }
-
+    // THực hiện logic khi nhấn nút save
     fun onClickSaveButton() = viewModelScope.launch {
         if (!isEditType) {
             var countItemWithCategory: String

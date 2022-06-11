@@ -9,11 +9,11 @@ import com.son.finalproject.R
 import com.son.finalproject.base.BaseFragment
 import com.son.finalproject.databinding.FragmentAssignManagementBinding
 import com.son.finalproject.ui.management.assignment.adapter.AssignmentAdapter
+import com.son.finalproject.ui.management.return_asset.adapter.ReturnAdapter
 import com.son.finalproject.ui.management.assignment.viewmodels.AssignManagementViewModel
 import com.son.finalproject.utils.dialog.DeleteDialog
 import com.son.finalproject.utils.helper.showPopUp
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_user_management.*
 
 @AndroidEntryPoint
 class AssignManagementFragment :

@@ -25,6 +25,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         initObserve()
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadData()
+    }
+
     private fun initObserve() {
         viewModel.liveUserType.observe(viewLifecycleOwner){
             when(it){

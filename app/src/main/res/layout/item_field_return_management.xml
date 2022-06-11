@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="assignment"
+            type="com.son.finalproject.data.Assignment" />
+
+        <variable
+            name="index"
+            type="String" />
+
+        <variable
+            name="isAdmin"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_field_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{index}"
+            tools:text="@string/no" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.asset.assetCode}"
+            tools:text="@string/asset_code" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.asset.assetName}"
+            tools:text="@string/asset_name" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.assignedBy}"
+            tools:text="@string/assigned_by" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.assignedDate}"
+            tools:text="@string/assigned_date" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            tools:text="@string/state1" />
+
+        <ImageView
+            android:id="@+id/btnAccept"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:visibility="@{isAdmin?View.VISIBLE:View.GONE}"
+            android:src="@drawable/ic_accept"/>
+
+        <ImageView
+            android:id="@+id/btnDeclined"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:visibility="@{isAdmin?View.VISIBLE:View.GONE}"
+            android:src="@drawable/ic_decline"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_height="@dimen/_24sdp"
+            android:layout_width="wrap_content"
+            android:id="@+id/btnReturn"
+            android:background= "@color/color_77e6b6"
+            android:visibility="@{isAdmin?View.GONE:View.VISIBLE}"
+            android:text="@string/return_1"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

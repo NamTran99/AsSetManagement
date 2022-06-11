@@ -30,7 +30,7 @@ class ManageRepositoryImpl @Inject constructor(
         return assetDAO.getListAsset()
     }
 
-    override suspend fun getAssetByStatus(assetStatus: AssetStatus): List<Asset>{
+    override suspend fun getAssetByStatus(assetStatus: AssetStatus): List<Asset> {
         return assetDAO.getAssetByStatus(assetStatus.inx)
     }
 
@@ -38,21 +38,25 @@ class ManageRepositoryImpl @Inject constructor(
         return assetDAO.getAllAssetCode()
     }
 
-    override suspend fun getAssetByID(assetID: String): Asset{
-        return  assetDAO.getAssetByID(assetID)
+    override suspend fun getAssetByID(assetID: String): Asset {
+        return assetDAO.getAssetByID(assetID)
     }
 
     override suspend fun removeAsset(asset: Asset): Int {
         return assetDAO.delete(asset)
     }
 
-    override suspend fun updateAsset(asset: Asset): Int{
-        return  assetDAO.update(asset)
+    override suspend fun updateAsset(asset: Asset): Int {
+        return assetDAO.update(asset)
     }
 
-    suspend fun getAssetForRequest(userID: String): List<Asset>    {
+    suspend fun getAssetForRequest(userID: String): List<Asset> {
         return assetDAO.getAssetAvailableForRequest(userID)
     }
+
+//    suspend fun getAllAssetAssignmentByUserID(userID: String): List<Asset>{
+//        return assetDAO.
+//    }
 
     // Category
     override suspend fun getLabel(label: String): List<String> {
@@ -95,11 +99,11 @@ class ManageRepositoryImpl @Inject constructor(
         return userDAO.delete(user)
     }
 
-    override suspend fun getUserByID(userID: String): User{
+    override suspend fun getUserByID(userID: String): User {
         return userDAO.getUserByID(userID)
     }
 
-    override suspend fun updateUser(user: User): Int{
+    override suspend fun updateUser(user: User): Int {
         return userDAO.update(user)
     }
 
@@ -107,31 +111,51 @@ class ManageRepositoryImpl @Inject constructor(
     override suspend fun insertAssignment(assignment: Assignment): Long {
         return assignmentDAO.insert(assignment)
     }
+
     override suspend fun getAllAssignment(): List<Assignment> {
         return assignmentDAO.getAllAssignment()
     }
+
     override suspend fun removeAssignment(assignment: Assignment): Int {
         return assignmentDAO.delete(assignment)
     }
 
+    suspend fun getAssignmentByUserID(userID: String): List<Assignment> {
+        return assignmentDAO.getAssignmentByUserID(userID)
+    }
+
+    suspend fun updateAssignment(assignment: Assignment):Int{
+        return assignmentDAO.update(assignment)
+    }
+
     //Request
 
-    override suspend fun insertRequest(request: Request): Long{
-        return  requestDAO.insert(request)
+    override suspend fun insertRequest(request: Request): Long {
+        return requestDAO.insert(request)
     }
-    override suspend fun removeRequest(request: Request): Int{
+
+    override suspend fun removeRequest(request: Request): Int {
         return requestDAO.delete(request)
     }
 
-    suspend fun getRequestByUserID(userID: String): List<Request>{
+    suspend fun removeRequestByAssetCode(assetCode: String){
+        Log.d("TAG", "removeRequestByAssetCode: $assetCode")
+        return requestDAO.deleteRequestByAssetCode(assetCode)
+    }
+
+    suspend fun getRequestByUserID(userID: String): List<Request> {
         return requestDAO.getRequestByUserID(userID)
     }
 
-    override suspend fun getAllRequest(): List<Request>{
+    override suspend fun getAllRequest(): List<Request> {
         return requestDAO.getAllRequest()
     }
 
-    suspend fun updateRequest(request: Request): Int{
+    suspend fun getAllRequestByUserID(userID: String): List<Request>{
+        return requestDAO.getAllRequestByUserID(userID)
+    }
+
+    suspend fun updateRequest(request: Request): Int {
         return requestDAO.update(request)
     }
 }

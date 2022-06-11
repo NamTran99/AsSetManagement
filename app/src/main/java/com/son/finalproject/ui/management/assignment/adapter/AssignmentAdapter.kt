@@ -2,11 +2,9 @@ package com.son.finalproject.ui.management.assignment.adapter
 
 import com.son.finalproject.R
 import com.son.finalproject.base.BaseRecyclerViewAdapter
-import com.son.finalproject.data.Asset
 import com.son.finalproject.data.Assignment
-import com.son.finalproject.data.User
 import com.son.finalproject.databinding.ItemFieldAssignManagementBinding
-import com.son.finalproject.ui.management.asset.adapter.UserAdapter
+import com.son.finalproject.ui.management.return_asset.adapter.ReturnAdapter
 
 class AssignmentAdapter : BaseRecyclerViewAdapter<Assignment , ItemFieldAssignManagementBinding>(){
     override val layoutId = R.layout.item_field_assign_management

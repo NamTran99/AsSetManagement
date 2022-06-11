@@ -26,6 +26,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, AuthenticationViewMod
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // truyền viewmodel vào UI, và vòng đời viewLifecycleOwner (hỗ trợ data binding 2 chuyền)
         binding.apply {
             action = viewModel
             lifecycleOwner = viewLifecycleOwner

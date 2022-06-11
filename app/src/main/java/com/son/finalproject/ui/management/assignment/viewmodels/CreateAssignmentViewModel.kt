@@ -32,11 +32,11 @@ class CreateAssignmentViewModel @Inject constructor(
             listFilterAssetID.value = getAllAvailableAssetID()
         }
     }
-
+    // lưu ngày tháng
     fun setAssignedDate(date: String) {
         liveAssign.value?.assignedDate = date
     }
-
+    // lưu data spinner khi người dùng chọn
     fun onSpinnerUserSelected(position: Int) {
         listFilterUserID.value?.get(position)?.apply {
             Log.d(TAG, "onSpinnerUserSelected: user $this")
@@ -44,7 +44,7 @@ class CreateAssignmentViewModel @Inject constructor(
             liveAssign.value?.userCode = this.staffCode
         }
     }
-
+    // lưu data asset khi người dùng chọn
     fun onSpinnerAssetSelected(position: Int) {
         listFilterAssetID.value?.get(position)?.apply {
             Log.d(TAG, "onSpinnerUserSelected: asset $this")
@@ -52,7 +52,7 @@ class CreateAssignmentViewModel @Inject constructor(
             liveAssign.value?.assetCode = this.assetCode
         }
     }
-
+    // THực hiện logic khi nhấn lưu assignment
     fun onClickSaveAssignment() = viewModelScope.launch {
         liveAssign.value?.apply {
             if (manageRepositoryImpl.insertAssignment(this) >= 0

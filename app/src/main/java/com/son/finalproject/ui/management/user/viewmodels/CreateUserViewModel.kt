@@ -52,7 +52,7 @@ class CreateUserViewModel @Inject constructor(
             else -> 1
         }
     }
-
+    // di chuyển sang màn hình nhập thêm thông tin cho user
     fun onClickNextInputUser() {
         navigateToDestination(
             R.id.action_createUserFragment_to_extraCreateUserFragment, bundleOf(
@@ -60,7 +60,7 @@ class CreateUserViewModel @Inject constructor(
             )
         )
     }
-
+    // quay trở lại màn hình đầu
     fun onClickBackUser() {
         onBackStack()
     }

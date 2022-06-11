@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class RoomModule {
 
-    // tạo các DAO
+    // tạo các DAO hỗ trợ lấy data trong room
     @Singleton
     @Provides
     fun provideMissionDAO(db: AppDataBase): UserDAO = db.userDAO()

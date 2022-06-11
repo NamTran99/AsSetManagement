@@ -8,6 +8,7 @@ interface IActivityApplication{
     fun setVisibilityForNavigationFollowUser(user: UserType)
 }
 
+// xoay màn hình
 enum class WindowRotateType{
     Horizontal,
     Vertical

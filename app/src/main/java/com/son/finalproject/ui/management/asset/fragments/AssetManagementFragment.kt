@@ -55,14 +55,8 @@ class AssetManagementFragment :
     }
 
     override fun onResume() {
-//        rotateWindow(WindowRotateType.Horizontal)
         viewModel.getAssetAndCategory()
         super.onResume()
-    }
-
-    override fun onStop() {
-//        rotateWindow(WindowRotateType.Vertical)
-        super.onStop()
     }
 
     private fun initObserver() {

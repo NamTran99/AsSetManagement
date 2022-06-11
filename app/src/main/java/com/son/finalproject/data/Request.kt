@@ -24,4 +24,10 @@ data class Request(
     var assetCode: String= "", // mã hóa
     var asset: Asset = Asset(),
     var user: User = User()
-)
+){
+    companion object{
+        const val REQUEST_STATUS_REQUESTING = 0
+        const val REQUEST_STATUS_DECLINED = 1
+        const val REQUEST_STATUS_COMPLETE = 2
+    }
+}

@@ -27,4 +27,5 @@ interface AssetDAO : BaseDao<Asset> {
 
     @Query("select * from asset where not exists (select * from ${RoomExtension.TABLE_REQUEST} where request.staffCode = :staffCode and asset.assetCode = request.assetCode) and status like :status ")
     suspend fun getAssetAvailableForRequest(staffCode: String, status: Int = 0): List<Asset>
+
 }

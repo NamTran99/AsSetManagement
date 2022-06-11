@@ -16,6 +16,7 @@ import androidx.fragment.app.DialogFragment
 import com.son.finalproject.R
 import com.son.finalproject.databinding.FragmentDialogDeleteBinding
 
+// Tạo dialog khi người dùng nhấn delete
 class DeleteDialog : DialogFragment() {
 
     private lateinit var binding: FragmentDialogDeleteBinding

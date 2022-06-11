@@ -21,7 +21,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-// base fragment tất cả các fragmetn kế thừa đều có chưc năng ở dưới
+// base fragment tất cả các fragment kế thừa đều có chưc năng ở dưới
 abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(), IActivityApplication{
     protected val TAG by lazy { this::class.java.name }
 

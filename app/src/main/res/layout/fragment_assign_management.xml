@@ -163,7 +163,7 @@
 
                         <TextView
                             style="@style/FieldParent"
-                            android:layout_width="@dimen/_50sdp"
+                            android:layout_width="@dimen/_100sdp"
                             android:text="@string/no" />
 
                         <TextView

@@ -30,7 +30,7 @@
     <string name="install_date">Install Date</string>
     <string name="state">State:</string>
     <string name="available">Available</string>
-    <string name="notavailable">NotAvailable</string>
+    <string name="notavailable">Not Available</string>
     <string name="save">SAVE</string>
     <string name="cancel">CANCEL</string>
     <string name="select_assigned_date">Select assigned date</string>
@@ -40,9 +40,9 @@
     <string name="sign_up_succesfully">Sign up successfully</string>
     <string name="sign_in_with_wrong_password">You type wrong password !!</string>
     <string name="user_not_found">The account has not been initialized</string>
-    <string name="request_pending">Request \n Pending</string>
-    <string name="request_complete">Request \n Complete</string>
-    <string name="assets_avaiable">Assets \n Avaiable</string>
+    <string name="request_pending">Request\nPending</string>
+    <string name="request_complete">Request\nComplete</string>
+    <string name="assets_avaiable">Assets\nAvaiable</string>
     <string name="my_task">My Task</string>
     <string name="create_category">CREATE CATEGORY</string>
     <string name="create_request">Create Request</string>
@@ -55,6 +55,10 @@
     <string name="remove_asset_successfully">Remove asset successfully</string>
     <string name="accept_request_successfully">Accept request successfully</string>
     <string name="remove_assignment_successfully">Remove assignment successfully</string>
+    <string name="create_return_request_successfully">Create return request successfully</string>
+    <string name="accept_return_request_successfully">Accept return request successfully</string>
+    <string name="decline_return_request_successfully">Decline return request successfully</string>
+    <string name="cancel_return_request_successfully">Cancel return request successfully</string>
     <string name="remove_request_successfully">Remove request successfully</string>
     <string name="declined_request_successfully">Decline request successfully</string>
     <string name="remove_user_successfully">Remove user successfully</string>
@@ -102,6 +106,8 @@
     <string name="pass">Password</string>
     <string name="back">Back</string>
     <string name="manage_assignment">Manage Assignment</string>
+    <string name="manage_asset">Manage issued Asset</string>
+    <string name="manage_returning">Manage return Asset</string>
     <string name="no">No.</string>
     <string name="assigned_to">Assigned To</string>
     <string name="assigned_by">Assigned By</string>
@@ -120,4 +126,13 @@
     <string name="management">Management</string>
     <string name="log_out">Log out</string>
     <string name="requesting">Requesting</string>
+    <string name="request_return_asset">Request Return Asset</string>
+    <string name="return_date">return date</string>
+    <string name="create">Create</string>
+    <string name="manage_issued_asset">Manage issued asset</string>
+    <string name="return_1">return</string>
+    <string name="holding">Holding</string>
+    <string name="returning">Returning Request</string>
+    <string name="returned">Returned</string>
+    <string name="issued_asset">Issued Asset</string>
 </resources>

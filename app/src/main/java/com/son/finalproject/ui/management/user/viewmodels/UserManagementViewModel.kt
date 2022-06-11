@@ -46,7 +46,7 @@ class UserManagementViewModel @Inject constructor(
     }
 
     fun onSearchNameTextChange(text: String) = viewModelScope.launch {
-        filterUserString = text
+        filterUserString = text.lowercase()
         filterUserType()
     }
 
@@ -57,8 +57,8 @@ class UserManagementViewModel @Inject constructor(
                 user.type == filterUserType
             }
         } else allUser).filter {
-            it.fullName.contains(filterUserString) || it.staffCode.contains(filterUserString) ||
-                    it.userName.contains(filterUserString)|| it.joinDate.contains(filterUserString)
+            it.fullName.lowercase().contains(filterUserString) || it.staffCode.lowercase().contains(filterUserString) ||
+                    it.userName.lowercase().contains(filterUserString)|| it.joinDate.lowercase().contains(filterUserString)
         }.toMutableList()
     }
 

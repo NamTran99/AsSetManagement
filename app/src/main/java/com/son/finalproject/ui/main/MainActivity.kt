@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
             }
         }
     }
-
+    // khởi tạo controller cho đrawerlayout
     private fun initDrawerLayout() {
         NavigationUI.setupWithNavController(binding.navView, controller)
         binding.navView.setNavigationItemSelectedListener {
@@ -103,12 +103,13 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
         }
     }
 
+    // kiểm tra user đã đăng nhập chưa nếu rồi tự động chuyển vào màn hình home
     private fun checkUserAlreadyLogIn() {
         if (mySharePreference.getUserEmail().isNotEmpty()) {
             navigateToDestination(R.id.homeFragment)
         }
     }
-
+    // Hỗ trợ di chuyển sang màn hình mong muốn
     private fun navigateToDestination(action: Int, bundle: Bundle? = null) {
         bundle?.let {
             controller.navigate(action, it)
@@ -118,6 +119,7 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
 
     private var doubleBackToExitPressedOnce = false
 
+    // TÍnh năng back 2 lần ở màn hình home thì thoát app
     override fun onBackPressed() {
         when (controller.currentDestination?.id) {
             R.id.homeFragment -> {
@@ -136,7 +138,7 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
                 super.onBackPressed()
         }
     }
-
+    // xoay màn hình(hiện tại ko dùng)
     override fun rotateWindow(windowRotateType: WindowRotateType) {
         Log.d(TAG, "rotateWindow: ${windowRotateType.name}")
         requestedOrientation = when(windowRotateType){

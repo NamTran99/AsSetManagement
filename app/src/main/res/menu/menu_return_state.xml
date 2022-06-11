@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_return_holding"
+        android:title="@string/holding" />
+
+    <item
+        android:id="@+id/menu_return_waiting"
+        android:title="@string/returning" />
+
+    <item
+        android:id="@+id/menu_return_returned"
+        android:title="@string/returned" />
+</menu>

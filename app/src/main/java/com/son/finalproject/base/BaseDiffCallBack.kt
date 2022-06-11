@@ -2,6 +2,7 @@ package com.son.finalproject.base
 
 import androidx.recyclerview.widget.DiffUtil
 
+// Nếu muốn trao đổi trực tiếp về code, bug thì liên hệ: 0918780192
 // base phân biệt sự khác nhau trong listview, nếu khác nhau giữa item nào chỉ update UI cho item đó,
 // => tăng performance
 class BaseDiffCallBack<T>(
