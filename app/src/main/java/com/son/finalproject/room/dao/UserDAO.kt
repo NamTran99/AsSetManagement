@@ -19,4 +19,11 @@ interface UserDAO : BaseDao<User>{
 
     @Query("select * from ${RoomExtension.TABLE_USER}")
     suspend fun getListUser() : List<User>
+
+    @Query("select staffCode from ${RoomExtension.TABLE_USER}")
+    suspend fun getAllStaffCode() : List<String>
+
+    @Query("select * from ${RoomExtension.TABLE_USER} where staffCode like :userID")
+    suspend fun getUserByID(userID: String): User
+
 }

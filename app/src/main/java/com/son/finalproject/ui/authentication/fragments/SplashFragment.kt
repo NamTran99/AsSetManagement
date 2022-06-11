@@ -9,6 +9,7 @@ import com.son.finalproject.databinding.FragmentSplashBinding
 import com.son.finalproject.ui.authentication.viewmodels.AuthenticationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class SplashFragment : BaseFragment<FragmentSplashBinding, AuthenticationViewModel>() {
     override val viewModel: AuthenticationViewModel by activityViewModels()
@@ -17,6 +18,8 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, AuthenticationViewMod
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Có khái niệm graphNavigation: Hỗ trợ điều hướng giữa các screen trên màn hình
+        // navigateToDestination: điều hướng từ spalashFragment sang signinFragment
         binding.apply {
             btnSigninSpalsh.setOnClickListener {
                 viewModel.clearAllField()

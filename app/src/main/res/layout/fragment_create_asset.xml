@@ -8,6 +8,9 @@
         <variable
             name="action"
             type="com.son.finalproject.ui.management.asset.viewmodels.CreateAssetViewModel" />
+        <variable
+            name="isEdit"
+            type="Boolean" />
     </data>
 
     <RelativeLayout
@@ -63,7 +66,7 @@
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/baloo"
                 android:gravity="center"
-                android:text="@string/create_new_asset"
+                android:text="@{isEdit?@string/edit_asset:@string/create_new_asset}"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -81,15 +84,15 @@
                     android:id="@+id/edt_new_name_asset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="@dimen/_6sdp"
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
-                    android:elevation="@dimen/_5sdp"
                     android:drawableStart="@drawable/ic_baseline_create_24"
                     android:drawablePadding="5dp"
+                    android:elevation="@dimen/_5sdp"
                     android:fontFamily="@font/baloo"
                     android:hint="@string/name_of_new_asset"
                     android:padding="10dp"
@@ -106,8 +109,7 @@
                 android:layout_marginHorizontal="@dimen/_17sdp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                app:cardElevation="@dimen/_4sdp"
-               >
+                app:cardElevation="@dimen/_4sdp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -185,13 +187,14 @@
                     android:id="@+id/edt_install_date_asset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
                     android:drawablePadding="5dp"
+                    android:text="@{action.liveAsset.installDate}"
                     android:elevation="5dp"
                     android:fontFamily="@font/baloo"
                     android:hint="@string/install_date"

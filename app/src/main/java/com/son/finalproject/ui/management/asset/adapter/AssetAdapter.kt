@@ -6,10 +6,25 @@ import com.son.finalproject.data.Asset
 import com.son.finalproject.data.Category
 import com.son.finalproject.databinding.ItemFieldAssetManagementBinding
 import com.son.finalproject.ui.management.asset.viewmodels.AssetManagementViewModel
+import com.son.finalproject.utils.dialog.DeleteDialog
 
-class AssetAdapter(private val viewModel: AssetManagementViewModel): BaseRecyclerViewAdapter<Pair<Asset,Category>, ItemFieldAssetManagementBinding>() {
+class AssetAdapter(): BaseRecyclerViewAdapter<Pair<Asset,Category>, ItemFieldAssetManagementBinding>() {
     override val layoutId: Int
         get() = R.layout.item_field_asset_management
+
+    // text: tên thuộc tính muốn xóa
+    private var mOnClickRemove : ((text: Asset) -> Unit)? = null
+    private var mOnClickEdit : ((text: Asset) -> Unit)? = null
+
+    fun setOnClickRemove(func: ((text: Asset) ->Unit)?): AssetAdapter{
+        mOnClickRemove = func
+        return this
+    }
+
+    fun setOnClickEdit(func: ((text: Asset) ->Unit)?): AssetAdapter{
+        mOnClickEdit = func
+        return this
+    }
 
     override fun onBindViewHolder(
         holder: BaseViewHolder<ItemFieldAssetManagementBinding>,
@@ -21,8 +36,13 @@ class AssetAdapter(private val viewModel: AssetManagementViewModel): BaseRecycle
             category = item.second
             state.text = if(item.first.status == 0) "Available" else "Not Available"
             btnRemove.setOnClickListener {
-                viewModel.removeAssetCode(item.first.assetCode)
+                mOnClickRemove?.invoke(item.first)
+            }
+
+            btnEdit.setOnClickListener {
+                mOnClickEdit?.invoke(item.first)
             }
         }
+
     }
 }

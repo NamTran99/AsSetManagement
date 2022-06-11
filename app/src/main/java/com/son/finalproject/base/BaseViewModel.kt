@@ -39,12 +39,6 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
         )
     }
 
-    fun backScreen() = viewModelScope.launch {
-        evenSender.send(
-            AppEvent.OnBackScreen
-        )
-    }
-
     fun closeApp() = viewModelScope.launch {
         evenSender.send(
             AppEvent.OnCloseApp

@@ -3,6 +3,7 @@
     xmlns:tool="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="user"
             type="com.son.finalproject.data.User" />
@@ -12,8 +13,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/_10sdp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/_10sdp">
 
         <TextView
             style="@style/FieldChildren"
@@ -26,16 +27,19 @@
             android:layout_width="@dimen/_100sdp"
             android:text="@{@string/full_name_format(user.lastName, user.firstName)}"
             tool:text="@string/full_name" />
+
         <TextView
             style="@style/FieldChildren"
             android:layout_width="@dimen/_100sdp"
-            android:text="trandinhnam1199"
+            android:text="@{user.userName}"
             tool:text="@string/user_name" />
+
         <TextView
             style="@style/FieldChildren"
             android:layout_width="@dimen/_100sdp"
             android:text="@{user.joinDate}"
             tool:text="@string/joined_date" />
+
         <TextView
             style="@style/FieldChildren"
             android:layout_width="@dimen/_100sdp"
@@ -43,10 +47,20 @@
             tool:text="@string/type" />
 
         <ImageView
+            android:id="@+id/btnEdit"
             style="@style/FieldChildren"
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_15sdp"
-            android:src="@drawable/ic_remove"/>
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/ic_edit" />
+
+        <ImageView
+            android:id="@+id/btnRemove"
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/ic_remove" />
 
     </LinearLayout>
 </layout>

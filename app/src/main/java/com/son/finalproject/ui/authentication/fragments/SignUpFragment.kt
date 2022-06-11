@@ -26,7 +26,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, AuthenticationViewMod
             initValidation()
         }
     }
-
+    // hỗ trợ validation
     private fun initValidation() {
         binding.apply {
             val listTextInput = listOf(

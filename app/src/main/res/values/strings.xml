@@ -23,6 +23,7 @@
     <string name="it_asset_management">IT Asset Management</string>
     <string name="hoa_sen_university">Hoa Sen University</string>
     <string name="create_new_asset">Create New Asset</string>
+    <string name="edit_asset">Edit Asset</string>
     <string name="name_of_new_asset">Name of New Asset</string>
     <string name="category">Category</string>
     <string name="specification">Specification</string>
@@ -47,7 +48,17 @@
     <string name="create_request">Create Request</string>
     <string name="back_2_time">Please click BACK again to exit</string>
     <string name="create_asset_successfully">Create asset successfully</string>
+    <string name="update_asset_successfully">Update asset successfully</string>
     <string name="create_user_successfully">Create user successfully</string>
+    <string name="create_request_successfully">Create request successfully</string>
+    <string name="update_user_successfully">Update user successfully</string>
+    <string name="remove_asset_successfully">Remove asset successfully</string>
+    <string name="accept_request_successfully">Accept request successfully</string>
+    <string name="remove_assignment_successfully">Remove assignment successfully</string>
+    <string name="remove_request_successfully">Remove request successfully</string>
+    <string name="declined_request_successfully">Decline request successfully</string>
+    <string name="remove_user_successfully">Remove user successfully</string>
+    <string name="create_assignment_successfully">Create assignment successfully</string>
 
     <!--    validate string error-->
     <string name="email_error">Email is not valid </string>
@@ -74,14 +85,39 @@
     <string name="select_joined_date">Select joined date</string>
     <string name="choose_type">Choose type</string>
     <string name="create_new_user">Create New User</string>
+    <string name="update_user">Update User</string>
     <string name="admin">Admin</string>
     <string name="type">Type</string>
     <string name="staff_code">Staff Code</string>
     <string name="full_name">Full Name</string>
-    <string name="user_name">User Name</string>
     <string name="joined_date">Joined Date</string>
 
     <string name="full_name_format">%s %s</string>
     <string name="search1">Search....</string>
     <string name="manage_users">Manage Users</string>
+    <string name="asset_management">Asset Management</string>
+    <string name="assign_management">Assign Management</string>
+    <string name="next">Next</string>
+    <string name="user_name">User Name</string>
+    <string name="pass">Password</string>
+    <string name="back">Back</string>
+    <string name="manage_assignment">Manage Assignment</string>
+    <string name="no">No.</string>
+    <string name="assigned_to">Assigned To</string>
+    <string name="assigned_by">Assigned By</string>
+    <string name="assigned_date">Assigned date</string>
+    <string name="report">Report</string>
+    <string name="total">Total</string>
+    <string name="assigned">Assigned</string>
+    <string name="create_new_assignment">Create new assignment</string>
+    <string name="declined">Declined</string>
+    <string name="completed">Completed</string>
+    <string name="waiting">Waiting</string>
+    <string name="are_you_sure_to_delete_item">Are you sure?</string>
+    <string name="delete">Delete</string>
+    <string name="you_will_not_able_to_recover_this_item">You will not able to recover this item</string>
+    <string name="yes_delete_it">Yes, delete it</string>
+    <string name="management">Management</string>
+    <string name="log_out">Log out</string>
+    <string name="requesting">Requesting</string>
 </resources>

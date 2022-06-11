@@ -2,10 +2,6 @@ package com.son.finalproject.data;
 
 import com.son.finalproject.R
 
-/*
-    Copyright © 2022 UITS CO.,LTD
-    Created by SangTB on 5/21/2022
-*/
 
 data class DataUiHome(
     var fullName: String = "",
@@ -17,5 +13,5 @@ data class DataUiHome(
     var textBox2 : Int = R.string.assignment,
     var textBox3 : Int = R.string.reports,
     var textBox4 : Int = R.string.requests,
-    var textBtn : Int = R.string.create_category
+    var textBtn : Int = R.string.create_new_asset
 )

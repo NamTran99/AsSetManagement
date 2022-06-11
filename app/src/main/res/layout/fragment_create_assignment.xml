@@ -1,14 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.management.assignment.fragments.CreateAssignmentFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.management.assignment.viewmodels.CreateAssignmentViewModel" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:background="@drawable/background"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="IT Asset Management"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="Hoa Sen University"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_header"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/title_create_assignment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="Create New Assignment"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
+<!--            select user-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_user_assignment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@+id/title_create_assignment"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_toStartOf="@+id/searchUser"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                app:cardElevation="@dimen/_4sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_create_24" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toEndOf="@id/img_logo"
+                        android:background="@color/white"
+                        android:fontFamily="@font/baloo"
+                        android:hint="@string/category"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/searchUser"
+                android:layout_width="54dp"
+                android:layout_height="60dp"
+                android:layout_above="@+id/layout_asset_assignment"
+                android:layout_alignTop="@+id/layout_user_assignment"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="-4dp"
+                android:backgroundTint="#F3EFEF"
+                android:drawableLeft="@drawable/ic_baseline_search_24"
+                android:elevation="5dp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_asset_assignment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@+id/layout_user_assignment"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_toStartOf="@+id/searchAsset"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                app:cardElevation="@dimen/_4sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_logo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_create_24" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerAsset"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toEndOf="@id/img_logo2"
+                        android:background="@color/white"
+                        android:fontFamily="@font/baloo"
+                        android:hint="@string/category"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/searchAsset"
+                android:layout_width="54dp"
+                android:layout_height="60dp"
+                android:layout_above="@+id/layout_asset_assignment"
+                android:layout_below="@+id/layout_user_assignment"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="-55dp"
+                android:backgroundTint="#F3EFEF"
+                android:drawableLeft="@drawable/ic_baseline_search_24"
+                android:elevation="5dp" />
+
+            <RelativeLayout
+                android:id="@+id/layout_assigned_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_asset_assignment"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp">
+
+
+                <TextView
+                    android:id="@+id/edt_select_assigned_date_assignment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:drawablePadding="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:hint="@string/select_assigned_date"
+                    android:padding="10dp"
+                    android:textColor="#041B2D"
+                    android:textColorHint="#DDDDDA"
+                    app:drawableLeftCompat="@drawable/ic_baseline_calendar_month_24" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_note_assignment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_assigned_date"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp">
+
+
+                <EditText
+                    android:id="@+id/edt_input_note_assignment"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:drawableLeft="@drawable/ic_baseline_create_24"
+                    android:drawablePadding="5dp"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:hint="Input some note here"
+                    android:padding="10dp"
+                    android:textColor="#041B2D"
+                    android:textColorHint="#DDDDDA" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_save_cancel_assignment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_note_assignment"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="2dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_save_assignment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="90dp"
+                    android:backgroundTint="#E06C78"
+                    android:text="SAVE"
+                    android:onClick="@{() -> action.onClickSaveAssignment()}"
+                    android:textColor="#FBEEE6"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+
+                </com.google.android.material.button.MaterialButton>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel_assignment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@+id/btn_save_assignment"
+                    android:backgroundTint="#79616F"
+                    android:text="CANCEL"
+                    android:textColor="#FBEEE6"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+
+                </com.google.android.material.button.MaterialButton>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

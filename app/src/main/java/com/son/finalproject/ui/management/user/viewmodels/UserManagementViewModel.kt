@@ -57,8 +57,16 @@ class UserManagementViewModel @Inject constructor(
                 user.type == filterUserType
             }
         } else allUser).filter {
-            it.fullName.contains(filterUserString) || it.staffCode.contains(filterUserString)
+            it.fullName.contains(filterUserString) || it.staffCode.contains(filterUserString) ||
+                    it.userName.contains(filterUserString)|| it.joinDate.contains(filterUserString)
         }.toMutableList()
+    }
+
+    fun removeUser(user: User)= viewModelScope.launch{
+        if(manageRepositoryImpl.removeUser(user) > 0){
+            showToast(R.string.remove_user_successfully)
+            listFilterUser.value = getAllUser().toMutableList()
+        }
     }
 
     companion object {

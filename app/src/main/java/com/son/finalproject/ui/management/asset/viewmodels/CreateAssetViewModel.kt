@@ -45,7 +45,7 @@ class CreateAssetViewModel @Inject constructor(
         }
     }
 
-    private fun setAssetCategoryID(id: Int){
+    private fun setAssetCategoryID(id: Int) {
         liveAsset.value?.categoryID = id
         liveAsset.forceRefresh()
     }
@@ -55,32 +55,50 @@ class CreateAssetViewModel @Inject constructor(
         liveAsset.forceRefresh()
     }
 
-    fun setDateTime(dateTime: String){
+    fun setDateTime(dateTime: String) {
         liveAsset.value?.installDate = dateTime
         liveAsset.forceRefresh()
     }
 
     fun onClickSaveButton() = viewModelScope.launch {
-        var countItemWithCategory: String
-        val listAsset =
-            manageRepo.getAllAssetCodeByCategoryID(selectedCategoryID)
+        if (!isEditType) {
+            var countItemWithCategory: String
+            val listAsset =
+                manageRepo.getAllAssetCodeByCategoryID(selectedCategoryID)
 
-        countItemWithCategory = if(listAsset.isNotEmpty()){
-            (getIDBehindSymbol(listAsset[0])+1).toString().padStart(3, '0')
-        }else{
-            DEFAULT_ASSET_CODE_ID
+            countItemWithCategory = if (listAsset.isNotEmpty()) {
+                (getIDBehindSymbol(listAsset[0]) + 1).toString().padStart(3, '0')
+            } else {
+                DEFAULT_ASSET_CODE_ID
+            }
+
+            val futureAssetID = "$symbolsCategory$countItemWithCategory"
+
+            Log.d(TAG, "onClickSaveButton: $countItemWithCategory")
+
+            liveAsset.value?.apply {
+                assetCode = futureAssetID
+                category = currentCategory ?: Category()
+                manageRepo.insertSpecification(specification)
+                manageRepo.insertAsset(this)
+                showToast(R.string.create_asset_successfully)
+                onBackStack()
+            }
+        } else {
+            liveAsset.value?.let{
+                manageRepo.updateAsset(it)
+                showToast(R.string.update_user_successfully)
+                onBackStack()
+            }
         }
+    }
 
-        val futureAssetID = "$symbolsCategory$countItemWithCategory"
+    var isEditType = false
 
-        Log.d(TAG, "onClickSaveButton: $countItemWithCategory")
-
-        liveAsset.value?.apply {
-            assetCode = futureAssetID
-            manageRepo.insertSpecification(specification)
-            manageRepo.insertAsset(this)
-            showToast(R.string.create_asset_successfully)
-            onBackStack()
+    fun setAssetID(assetID: String) = viewModelScope.launch {
+        isEditType = !assetID.isNullOrEmpty()
+        if(isEditType){
+            liveAsset.value = manageRepo.getAssetByID(assetID)
         }
     }
 
@@ -91,7 +109,7 @@ class CreateAssetViewModel @Inject constructor(
         return value.drop(2).toInt()
     }
 
-    companion object{
+    companion object {
         const val DEFAULT_ASSET_CODE_ID = "001"
     }
 }

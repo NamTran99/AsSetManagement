@@ -15,7 +15,6 @@
         android:layout_height="match_parent"
         tools:context=".temp.fragment.UserFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:id="@+id/layout_header"
             android:layout_width="match_parent"
@@ -73,7 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title_manage_user"
-                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
@@ -90,12 +90,17 @@
                     android:background="#DDDDDA"
                     android:backgroundTint="#F3EFEF"
                     android:drawableEnd="@drawable/ic_baseline_filter_alt_24"
-                    android:drawablePadding="5dp"
                     android:elevation="5dp"
+                    android:gravity="left"
+                    android:autoSizeMaxTextSize="@dimen/_12sdp"
+                    android:autoSizeMinTextSize="@dimen/_5sdp"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
                     android:fontFamily="@font/aclonica"
                     android:hint="@string/type"
                     android:padding="10dp"
-                    android:textColor="#041B2D" />
+                    android:textColor="#041B2D"
+                    tools:ignore="RtlHardcoded" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_search_user"
@@ -119,7 +124,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
-                    android:layout_marginTop="0dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_toEndOf="@+id/edt_search_user"

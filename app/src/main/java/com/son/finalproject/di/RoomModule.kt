@@ -1,10 +1,8 @@
 package com.son.finalproject.di
 
+import com.son.finalproject.data.Assignment
 import com.son.finalproject.room.AppDataBase
-import com.son.finalproject.room.dao.AssetDAO
-import com.son.finalproject.room.dao.CategoryDAO
-import com.son.finalproject.room.dao.SpecificationDAO
-import com.son.finalproject.room.dao.UserDAO
+import com.son.finalproject.room.dao.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +13,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class RoomModule {
 
+    // tạo các DAO
     @Singleton
     @Provides
     fun provideMissionDAO(db: AppDataBase): UserDAO = db.userDAO()
@@ -29,5 +28,13 @@ class RoomModule {
 
     @Singleton
     @Provides
-    fun specificationDAO(db: AppDataBase): SpecificationDAO = db.specificationDAO()
+    fun provideSpecificationDAO(db: AppDataBase): SpecificationDAO = db.specificationDAO()
+
+    @Singleton
+    @Provides
+    fun provideAssignmentDAO(db: AppDataBase): AssignmentDAO = db.assignmentDAO()
+
+    @Singleton
+    @Provides
+    fun provideRequestDAO(db: AppDataBase): RequestDAO = db.requestDAO()
 }

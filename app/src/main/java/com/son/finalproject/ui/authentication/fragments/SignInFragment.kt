@@ -34,6 +34,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, AuthenticationViewMod
         initValidation()
     }
 
+    // validation hỗ trợ check có phải là email, password?
     private fun initValidation() {
         binding.apply {
             val listTextInput = listOf(

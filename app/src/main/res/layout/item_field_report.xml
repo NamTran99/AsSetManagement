@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="report"
+            type="com.son.finalproject.data.Report" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_field_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{report.category}"
+            tools:text="@string/category" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{String.valueOf(report.total)}"
+            tools:text="@string/total" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{String.valueOf(report.assigned)}"
+            tools:text="@string/assigned" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{String.valueOf(report.available)}"
+            tools:text="@string/available" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{String.valueOf(report.notAvailable)}"
+            tools:text="@string/notavailable" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

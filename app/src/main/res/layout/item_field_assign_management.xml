@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="assignment"
+            type="com.son.finalproject.data.Assignment" />
+
+        <variable
+            name="index"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_field_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_50sdp"
+            android:text="@{index}"
+            tools:text="@string/no" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.asset.assetCode}"
+            tools:text="@string/asset_code" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.asset.assetName}"
+            tools:text="@string/asset_name" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.user.userName}"
+            tools:text="@string/assigned_to" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="nam tran"
+            tools:text="@string/assigned_by" />
+
+        <TextView
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            android:text="@{assignment.assignedDate}"
+            tools:text="@string/assigned_date" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_100sdp"
+            tools:text="@string/state1" />
+
+        <ImageView
+            android:id="@+id/btnRemove"
+            style="@style/FieldChildren"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:src="@drawable/ic_remove"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

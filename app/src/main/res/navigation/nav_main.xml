@@ -18,6 +18,9 @@
         android:id="@+id/splashFragment"
         android:name="com.son.finalproject.ui.authentication.fragments.SplashFragment"
         android:label="SplashFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/splashFragment"
+        app:popUpToInclusive="true"
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_signInFragment"
@@ -38,7 +41,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.son.finalproject.ui.home.fragments.HomeFragment"
+        android:name="com.son.finalproject.ui.home.fragments.admin.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -51,47 +54,56 @@
             app:argType="string" />
         <action
             android:id="@+id/action_homeFragment_to_requestFragment"
-            app:destination="@id/requestFragment" />
+            app:destination="@id/requestManagementFragment" />
         <action
             android:id="@+id/action_homeFragment_to_assetManageFragment"
             app:destination="@id/assetManageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentCreateRequest"
+            app:destination="@id/fragmentCreateRequest" />
 
     </fragment>
     <fragment
         android:id="@+id/createAssetFragment"
         android:name="com.son.finalproject.ui.management.asset.fragments.CreateAssetFragment"
         android:label="CreateAssetFragment"
-        tools:layout="@layout/fragment_create_asset" />
+        tools:layout="@layout/fragment_create_asset" >
+        <argument
+            android:name="assetID"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/assetManageFragment"
         android:name="com.son.finalproject.ui.management.asset.fragments.AssetManagementFragment"
         android:label="AssetManageFragment"
-        tools:layout="@layout/fragment_asset_management" >
+        tools:layout="@layout/fragment_asset_management">
         <action
             android:id="@+id/action_assetManageFragment_to_createAssetFragment"
             app:destination="@id/createAssetFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/requestFragment"
-        tools:layout="@layout/fragment_request"
-        android:name="com.son.finalproject.ui.home.fragments.RequestFragment"
-        android:label="RequestFragment" >
-        <action
-            android:id="@+id/action_requestFragment_to_fragmentCreateRequest"
-            app:destination="@id/fragmentCreateRequest" />
-    </fragment>
-    <fragment
-        tools:layout="@layout/fragment_create_request"
         android:id="@+id/fragmentCreateRequest"
-        android:name="com.son.finalproject.ui.home.fragments.FragmentCreateRequest"
-        android:label="FragmentCreateRequest" />
+        android:name="com.son.finalproject.ui.management.request.fragments.CreateRequestFragment"
+        android:label="FragmentCreateRequest"
+        tools:layout="@layout/fragment_create_request" >
+        <action
+            android:id="@+id/action_fragmentCreateRequest_to_requestManagementFragment"
+            app:destination="@id/requestManagementFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createUserFragment"
         android:name="com.son.finalproject.ui.management.user.fragments.CreateUserFragment"
         android:label="CreateUserFragment"
-        tools:layout="@layout/fragment_create_user"/>
+        tools:layout="@layout/fragment_create_user">
+        <action
+            android:id="@+id/action_createUserFragment_to_extraCreateUserFragment"
+            app:destination="@id/extraCreateUserFragment" />
+        <argument
+            android:name="staff_code"
+            app:argType="string"/>
+    </fragment>
 
     <fragment
         android:id="@+id/userManagementFragment"
@@ -101,6 +113,43 @@
         <action
             android:id="@+id/action_userManagementFragment_to_createUserFragment"
             app:destination="@id/createUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/extraCreateUserFragment"
+        android:name="com.son.finalproject.ui.management.user.fragments.ExtraCreateUserFragment"
+        android:label="ExtraC reat eUserFragment"
+        app:popUpTo="@+id/createUserFragment"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_extra_create_user" />
+    <fragment
+        android:id="@+id/assignManagementFragment"
+        android:name="com.son.finalproject.ui.management.assignment.fragments.AssignManagementFragment"
+        android:label="AssignManagementFragment"
+        tools:layout="@layout/fragment_assign_management">
+        <action
+            android:id="@+id/action_assignManagementFragment_to_createAssignmentFragment"
+            app:destination="@id/createAssignmentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createAssignmentFragment"
+        android:name="com.son.finalproject.ui.management.assignment.fragments.CreateAssignmentFragment"
+        android:label="CreateAssignmentFragment"
+        tools:layout="@layout/fragment_create_assignment" />
+    <fragment
+        android:id="@+id/reportFragment2"
+        android:name="com.son.finalproject.ui.management.report.fragments.ReportFragment"
+        android:label="ReportFragment"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/requestManagementFragment"
+        android:name="com.son.finalproject.ui.management.request.fragments.RequestManagementFragment"
+        android:label="RequestManagementFragment"
+        tools:layout="@layout/fragment_request_managment">
+        <action
+            android:id="@+id/action_requestManagementFragment_to_fragmentCreateRequest"
+            app:destination="@id/fragmentCreateRequest" />
     </fragment>
 
 </navigation>

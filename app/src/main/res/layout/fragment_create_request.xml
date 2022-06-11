@@ -7,7 +7,7 @@
 
         <variable
             name="action"
-            type="com.son.finalproject.ui.home.viewmodels.CreateRequestViewModel" />
+            type="com.son.finalproject.ui.management.request.viewmodels.CreateRequestViewModel" />
     </data>
 
     <LinearLayout
@@ -54,7 +54,6 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-
         <TextView
             android:id="@+id/txt_date"
             android:layout_width="match_parent"
@@ -66,13 +65,13 @@
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:drawablePadding="5dp"
-            android:drawableStart="@drawable/ic_baseline_calendar_month_24"
             android:elevation="5dp"
             android:fontFamily="@font/baloo"
             android:hint="@string/select_assigned_date"
             android:padding="10dp"
             android:textColor="#041B2D"
-            android:textColorHint="#DDDDDA" />
+            android:textColorHint="#DDDDDA"
+            app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/layout_category_asset"
@@ -93,13 +92,13 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_logo"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_baseline_create_24" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spinner"
-                    android:layout_toRightOf="@+id/img_logo"
+                    android:layout_toEndOf="@+id/img_logo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp"
@@ -121,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#E06C78"
                 android:text="@string/save"
+                android:onClick="@{() -> action.onClickSaveButton()}"
                 android:textColor="#FBEEE6"
                 android:textSize="18sp"
                 android:textStyle="bold">
@@ -135,6 +135,7 @@
                 android:layout_toEndOf="@+id/btn_save_asset"
                 android:backgroundTint="#79616F"
                 android:text="@string/cancel"
+                android:onClick="@{() -> action.onClickCancelButton()}"
                 android:textColor="#FBEEE6"
                 android:textSize="18sp"
                 android:textStyle="bold">

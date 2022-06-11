@@ -3,6 +3,7 @@
     xmlns:tool="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="asset"
             type="com.son.finalproject.data.Asset" />
@@ -15,8 +16,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/_10sdp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/_10sdp">
 
         <TextView
             style="@style/FieldChildren"
@@ -26,14 +27,14 @@
 
         <TextView
             style="@style/FieldChildren"
-            android:text="@{asset.assetName}"
             android:layout_width="@dimen/_100sdp"
+            android:text="@{asset.assetName}"
             tool:text="@string/asset_name" />
 
         <TextView
             style="@style/FieldChildren"
-            android:text="@{category.categoryName}"
             android:layout_width="@dimen/_100sdp"
+            android:text="@{category.categoryName}"
             tool:text="@string/category" />
 
         <TextView
@@ -43,10 +44,18 @@
             tool:text="@string/state1" />
 
         <ImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/ic_edit" />
+
+        <ImageView
             android:id="@+id/btnRemove"
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_15sdp"
-            android:src="@drawable/ic_remove"/>
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/ic_remove" />
 
     </LinearLayout>
 </layout>

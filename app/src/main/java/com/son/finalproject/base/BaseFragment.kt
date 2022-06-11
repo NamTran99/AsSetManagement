@@ -14,13 +14,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
+import com.son.finalproject.ui.main.UserType
 import com.son.finalproject.utils.helper.findNavController
 import com.son.finalproject.utils.helper.hideKeyboard
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-
+// base fragment tất cả các fragmetn kế thừa đều có chưc năng ở dưới
 abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(), IActivityApplication{
     protected val TAG by lazy { this::class.java.name }
 
@@ -101,6 +102,12 @@ abstract class BaseFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment(
     override fun rotateWindow(windowRotateType: WindowRotateType) {
         Log.d(TAG, "rotateWindow: ")
         activityApplication?.rotateWindow(windowRotateType)
+    }
+
+    // Hàm giúp ẩn hiện drawablelayout
+    override fun setVisibilityForNavigationFollowUser(user: UserType){
+        Log.d(TAG, "setDrawableMenuByUser: ")
+        activityApplication?.setVisibilityForNavigationFollowUser(user)
     }
 
     open fun showToast(content: String, duration: Int = Toast.LENGTH_SHORT) {

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_all"
-        android:title="@string/title_menu_state_pending" />
+        android:id="@+id/menu_requesting"
+        android:title="@string/requesting" />
     <item
-        android:id="@+id/menu_complete"
-        android:title="@string/title_menu_state_complete" />
+        android:id="@+id/menu_request_declined"
+        android:title="@string/declined" />
+    <item
+        android:id="@+id/menu_request_completed"
+        android:title="@string/completed" />
+
 </menu>

@@ -1,15 +1,9 @@
 package com.son.finalproject.repository
 
 import android.util.Log
-import com.son.finalproject.data.Asset
-import com.son.finalproject.data.Category
-import com.son.finalproject.data.Specification
-import com.son.finalproject.data.User
+import com.son.finalproject.data.*
 import com.son.finalproject.repository.interfaces.ManageRepository
-import com.son.finalproject.room.dao.AssetDAO
-import com.son.finalproject.room.dao.CategoryDAO
-import com.son.finalproject.room.dao.SpecificationDAO
-import com.son.finalproject.room.dao.UserDAO
+import com.son.finalproject.room.dao.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,7 +12,9 @@ class ManageRepositoryImpl @Inject constructor(
     private val assetDAO: AssetDAO,
     private val categoryDAO: CategoryDAO,
     private val specificationDAO: SpecificationDAO,
-    private val userDAO: UserDAO
+    private val userDAO: UserDAO,
+    private val assignmentDAO: AssignmentDAO,
+    private val requestDAO: RequestDAO
 ) : ManageRepository() {
 
     // Asset
@@ -26,12 +22,36 @@ class ManageRepositoryImpl @Inject constructor(
         return assetDAO.insert(asset)
     }
 
-    override suspend fun getAllAssetCodeByCategoryID(categoryID: Int): List<String>{
+    override suspend fun getAllAssetCodeByCategoryID(categoryID: Int): List<String> {
         return assetDAO.getAllAssetCodeByCategoryID(categoryID)
     }
 
-    override suspend fun getListAsset(): List<Asset> {
+    override suspend fun getAllAsset(): List<Asset> {
         return assetDAO.getListAsset()
+    }
+
+    override suspend fun getAssetByStatus(assetStatus: AssetStatus): List<Asset>{
+        return assetDAO.getAssetByStatus(assetStatus.inx)
+    }
+
+    override suspend fun getAllAssetID(): List<String> {
+        return assetDAO.getAllAssetCode()
+    }
+
+    override suspend fun getAssetByID(assetID: String): Asset{
+        return  assetDAO.getAssetByID(assetID)
+    }
+
+    override suspend fun removeAsset(asset: Asset): Int {
+        return assetDAO.delete(asset)
+    }
+
+    override suspend fun updateAsset(asset: Asset): Int{
+        return  assetDAO.update(asset)
+    }
+
+    suspend fun getAssetForRequest(userID: String): List<Asset>    {
+        return assetDAO.getAssetAvailableForRequest(userID)
     }
 
     // Category
@@ -44,12 +64,12 @@ class ManageRepositoryImpl @Inject constructor(
     }
 
     // Specification
-    override suspend fun insertSpecification(specification: Specification):Long{
+    override suspend fun insertSpecification(specification: Specification): Long {
         return specificationDAO.insert(specification)
     }
 
     // Helper: Join Table
-    override suspend fun loadAssetAndCategory(): Map<Category ,List<Asset> >{
+    override suspend fun loadAssetAndCategory(): Map<Category, List<Asset>> {
         return categoryDAO.loadAssetAndCategory()
     }
 
@@ -65,5 +85,53 @@ class ManageRepositoryImpl @Inject constructor(
     override suspend fun getAllUser(): List<User> {
         Log.d("TAG", "getAllUser: ")
         return userDAO.getListUser()
+    }
+
+    override suspend fun getAllUserID(): List<String> {
+        return userDAO.getAllStaffCode()
+    }
+
+    override suspend fun removeUser(user: User): Int {
+        return userDAO.delete(user)
+    }
+
+    override suspend fun getUserByID(userID: String): User{
+        return userDAO.getUserByID(userID)
+    }
+
+    override suspend fun updateUser(user: User): Int{
+        return userDAO.update(user)
+    }
+
+    // Assignment
+    override suspend fun insertAssignment(assignment: Assignment): Long {
+        return assignmentDAO.insert(assignment)
+    }
+    override suspend fun getAllAssignment(): List<Assignment> {
+        return assignmentDAO.getAllAssignment()
+    }
+    override suspend fun removeAssignment(assignment: Assignment): Int {
+        return assignmentDAO.delete(assignment)
+    }
+
+    //Request
+
+    override suspend fun insertRequest(request: Request): Long{
+        return  requestDAO.insert(request)
+    }
+    override suspend fun removeRequest(request: Request): Int{
+        return requestDAO.delete(request)
+    }
+
+    suspend fun getRequestByUserID(userID: String): List<Request>{
+        return requestDAO.getRequestByUserID(userID)
+    }
+
+    override suspend fun getAllRequest(): List<Request>{
+        return requestDAO.getAllRequest()
+    }
+
+    suspend fun updateRequest(request: Request): Int{
+        return requestDAO.update(request)
     }
 }

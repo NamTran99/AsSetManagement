@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import com.son.finalproject.R
 import com.son.finalproject.base.IActivityApplication
 import com.son.finalproject.base.WindowRotateType
@@ -18,6 +21,7 @@ import com.son.finalproject.databinding.HeaderBinding
 import com.son.finalproject.utils.MyPreference
 import com.son.finalproject.utils.helper.showToast
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), IActivityApplication {
@@ -38,6 +42,27 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
         initDrawerLayout()
     }
 
+    // Ản hiên các item trong drawablelayout
+    override fun setVisibilityForNavigationFollowUser(type: UserType){
+        when(type){
+            UserType.User -> {
+                binding.navView.menu.apply {
+                    findItem(R.id.assetManageFragment).isVisible = false
+                    findItem(R.id.userManagementFragment).isVisible = false
+                    findItem(R.id.assignManagementFragment).isVisible = false
+                }
+            }
+            UserType.Amin ->{
+                binding.navView.menu.apply {
+                    findItem(R.id.assetManageFragment).isVisible = true
+                    findItem(R.id.userManagementFragment).isVisible = true
+                    findItem(R.id.assignManagementFragment).isVisible = true
+                }
+            }
+        }
+    }
+
+    // khởi tạo controller cho navigation để điều hướng các fragment
     private fun setUpController() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.mainContainerView) as NavHostFragment
@@ -56,7 +81,23 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
     }
 
     private fun initDrawerLayout() {
-        binding.navView.setupWithNavController(controller)
+        NavigationUI.setupWithNavController(binding.navView, controller)
+        binding.navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_log_out ->{
+                    mySharePreference.clear()
+                    controller.popBackStack(R.id.splashFragment, true)
+                    controller.navigate(R.id.splashFragment)
+                }
+                else ->{
+                    onNavDestinationSelected(it, controller)
+                }
+            }
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+
+            return@setNavigationItemSelectedListener false
+        }
+
         binding.drawerLayout.apply {
             headerBinding = HeaderBinding.inflate(layoutInflater)
         }
@@ -111,4 +152,8 @@ class MainActivity : AppCompatActivity(), IActivityApplication {
     companion object{
         const val TAG = "activity"
     }
+}
+
+enum class UserType{
+    User, Amin
 }

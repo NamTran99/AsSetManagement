@@ -83,4 +83,7 @@
         <item name="android:autoSizeMinTextSize">@dimen/_9sdp</item>
         <item name="android:autoSizeTextType">uniform</item>
     </style>
+
+    <style name="ProgressDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    </style>
 </resources>

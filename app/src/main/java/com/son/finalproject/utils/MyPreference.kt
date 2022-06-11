@@ -14,12 +14,22 @@ class MyPreference @Inject constructor(@ApplicationContext context: Context) {
         private const val SHARE_PREFERENCE_NAME = "share_preference_name"
 
         private const val USER_EMAIL = "user_email"
+        private const val USER_ID = "user_id"
         private const val ADMIN = "admin"
         private const val EMPTY = ""
     }
 
     private val sharedPref: SharedPreferences =
         context.getSharedPreferences(SHARE_PREFERENCE_NAME, Context.MODE_PRIVATE)
+
+    fun saveUserID(userID: String){
+        put(USER_ID, userID)
+    }
+
+    fun getUserID(): String {
+        Log.d(TAG, "getUserID:${get(USER_ID, String::class.java)} ")
+        return get(USER_ID, String::class.java)
+    }
 
     fun saveUserEmail(email: String){
         Log.d(TAG, "saveUserEmail: $email ")
@@ -31,13 +41,13 @@ class MyPreference @Inject constructor(@ApplicationContext context: Context) {
         return get(USER_EMAIL, String::class.java)
     }
 
-    fun saveAdmin(boolean: Boolean){
+    fun saveIsAdmin(boolean: Boolean){
         Log.d(TAG, "saveAdmin: $boolean ")
         put(ADMIN, boolean)
     }
 
-    fun getAdmin(): Boolean {
-        Log.d(TAG, "getAdmin:${get(ADMIN, String::class.java)} ")
+    fun getIsAdmin(): Boolean {
+        Log.d(TAG, "getAdmin:${get(ADMIN, Boolean::class.java)} ")
         return get(ADMIN, Boolean::class.java)
     }
 

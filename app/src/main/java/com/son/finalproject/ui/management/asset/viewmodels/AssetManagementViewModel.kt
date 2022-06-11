@@ -76,8 +76,11 @@ class AssetManagementViewModel @Inject constructor(
         }.toMutableList()
     }
 
-    fun removeAssetCode(assetCode: String){
-
+    fun removeAsset(asset: Asset) = viewModelScope.launch{
+        if (manageRepositoryImpl.removeAsset(asset) >=0){
+            showToast(R.string.remove_asset_successfully)
+            getAssetAndCategory()
+        }
     }
 
     companion object {

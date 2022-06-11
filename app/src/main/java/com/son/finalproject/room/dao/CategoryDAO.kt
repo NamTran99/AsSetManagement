@@ -1,6 +1,7 @@
 package com.son.finalproject.room.dao
 
 import androidx.room.Dao
+import androidx.room.MapInfo
 import androidx.room.Query
 import com.son.finalproject.base.BaseDao
 import com.son.finalproject.data.Asset
@@ -17,5 +18,6 @@ interface CategoryDAO: BaseDao<Category>{
     suspend fun getListCategoryName(): List<Category>
 
     @Query("select * from ${RoomExtension.TABLE_CATEGORY} join ${RoomExtension.TABLE_ASSET} on ${RoomExtension.TABLE_ASSET}.categoryID = ${RoomExtension.TABLE_CATEGORY}.categoryID")
+    @MapInfo(valueColumn = "categoryName", keyColumn = "categoryName")
     suspend fun loadAssetAndCategory(): Map<Category ,List<Asset>>
 }

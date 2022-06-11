@@ -25,7 +25,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
-
+    // khởi tạo database toàn app
     @Provides
     @Singleton
     fun provideAppDatabase(

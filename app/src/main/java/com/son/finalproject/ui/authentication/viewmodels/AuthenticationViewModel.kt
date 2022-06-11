@@ -18,8 +18,8 @@ class AuthenticationViewModel @Inject constructor(
     private val authRepository: AuthRepositoryImpl
 ) : BaseViewModel(application) {
     // giả data
-    val email = MutableLiveData("trandinhnam1199@gmail.com")
-    val password = MutableLiveData("12345678")
+    val email = MutableLiveData("")
+    val password = MutableLiveData("")
     val rewritePassword = MutableLiveData(EMPTY_STRING)
 
     init {
@@ -28,6 +28,7 @@ class AuthenticationViewModel @Inject constructor(
        }
     }
 
+    // đăng nhập
     fun loginUser() = viewModelScope.launch {
         email.value?.let {
             val user = authRepository.getUserByEmail(it)
@@ -36,9 +37,7 @@ class AuthenticationViewModel @Inject constructor(
                 if (user.password == password.value) {
                     navigateToDestination(R.id.action_signInFragment_to_homeFragment)
                     mySharedPreferences.saveUserEmail(user.email)
-                    if(user.type == TYPE_ADMIN){
-                        mySharedPreferences.saveAdmin(true)
-                    }
+                    mySharedPreferences.saveUserID(user.staffCode)
                     showToast(getString(R.string.sign_in_succesfully))
                 } else {
                     showToast(getString(R.string.sign_in_with_wrong_password))
@@ -49,10 +48,11 @@ class AuthenticationViewModel @Inject constructor(
         }
     }
 
+    // Đăng ký
     fun onClickSignUp() = viewModelScope.launch {
         email.value?.let { email ->
             password.value?.let{ password ->
-                rewritePassword.value?.let{ rewritePassword ->
+                rewritePassword.value?.let{
                     val isSuccess = authRepository.registerUser(User(email = email, password = password))
                     if(isSuccess > ZERO){
                         navigateToDestination(R.id.action_signUpFragment_to_homeFragment)
@@ -71,9 +71,9 @@ class AuthenticationViewModel @Inject constructor(
     }
 
     fun clearAllField(){
-//        email.value = EMPTY_STRING
-//        password.value = EMPTY_STRING
-//        rewritePassword.value = EMPTY_STRING
+        email.value = EMPTY_STRING
+        password.value = EMPTY_STRING
+        rewritePassword.value = EMPTY_STRING
     }
 
     companion object {

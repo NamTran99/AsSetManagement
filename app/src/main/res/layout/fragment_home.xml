@@ -268,7 +268,7 @@
             android:background="@drawable/bg_home_button"
             android:backgroundTint="@color/color_button"
             android:text="@{action.homeData.textBtn}"
-            android:onClick="@{ () -> action.onClickCreateAsset()}"
+            android:onClick="@{ () -> action.onClickCreateButton()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
