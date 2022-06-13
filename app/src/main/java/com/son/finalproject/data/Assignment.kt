@@ -39,6 +39,14 @@ data class Assignment(
         const val STATE_WAITING = 2
         const val STATE_RETURNING = 3
         const val STATE_RETURNED = 4
+    }
 
+    override fun hashCode(): Int {
+        return assignmentID.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        val otherItem  = other as? Assignment
+        return status == otherItem?.status
     }
 }

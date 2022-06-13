@@ -44,7 +44,7 @@ class ReturnAdapter(private val isAdminType: Boolean) : BaseRecyclerViewAdapter<
             index = (position + 1).toString()
 
             state.text = when(item.status){
-                STATE_COMPLETED -> "Holding"
+                STATE_COMPLETED -> "Pending"
                 STATE_RETURNING -> "Returning"
                 STATE_RETURNED -> "Returned"
                 else -> "Returning"

@@ -34,7 +34,13 @@ class AssetAdapter(): BaseRecyclerViewAdapter<Pair<Asset,Category>, ItemFieldAss
         holder.binding.apply {
             asset = item.first
             category = item.second
-            state.text = if(item.first.status == 0) "Available" else "Not Available"
+            state.text = when(item.first.status) {
+                0 -> "Available"
+                1 -> "Not Available"
+                2 -> "Assigned"
+                else -> "Available"
+            }
+
             btnRemove.setOnClickListener {
                 mOnClickRemove?.invoke(item.first)
             }

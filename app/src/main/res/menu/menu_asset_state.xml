@@ -7,6 +7,9 @@
         android:id="@+id/menu_not_available"
         android:title="@string/not_available" />
     <item
+        android:id="@+id/menu_assigned"
+        android:title="@string/assigned" />
+    <item
         android:id="@+id/menu_all"
         android:title="@string/all" />
 </menu>

@@ -27,7 +27,13 @@ data class Asset(
     var isAssigned: Boolean = false,
     var categoryID: Int = 0,
     var category: Category = Category()
-)
+){
+    companion object{
+        const val ASSET_STATUS_AVAILABLE = 0
+        const val ASSET_STATUS_NOT_AVAILABLE = 1
+        const val ASSET_STATUS_ASSIGNED = 2
+    }
+}
 
 enum class AssetStatus(val inx: Int){
     Available(0), NotAvailable(1), Assigned(2)

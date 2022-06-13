@@ -18,7 +18,7 @@
 
                 <item
                     android:id="@+id/userManagementFragment"
-                    android:icon="@drawable/ic_baseline_product_24"
+                    android:icon="@drawable/ic_user_management"
                     android:menuCategory="secondary"
                     android:title="@string/user_management" />
 
@@ -36,12 +36,13 @@
 
                 <item
                     android:id="@+id/assignManagementFragment"
-                    android:icon="@drawable/ic_baseline_report_24"
+                    android:icon="@drawable/ic_assign_management"
                     android:menuCategory="secondary"
                     android:title="@string/assign_management" />
 
                 <item
                     android:id="@+id/returnManagementFragment"
+                    android:icon="@drawable/ic_user_management"
                     android:menuCategory="secondary"
                     android:title="@string/issued_asset"/>
             </group>
@@ -52,13 +53,13 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_user"
+                    android:id="@+id/profileFragment"
                     android:icon="@drawable/ic_baseline_person_pin_24"
                     android:menuCategory="secondary"
-                    android:title="@string/user" />
+                    android:title="@string/my_profile" />
                 <item
                     android:id="@+id/nav_log_out"
-                    android:icon="@drawable/ic_baseline_person_pin_24"
+                    android:icon="@drawable/ic_log_out"
                     android:menuCategory="secondary"
                     android:title="@string/log_out" />
             </group>

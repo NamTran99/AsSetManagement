@@ -31,6 +31,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, AuthenticationViewMod
         binding.apply {
             val listTextInput = listOf(
                 txtUsername.validate(listOf(Validator::isEmailValid), true),
+                txtLastname.validate(isRequireEmptyCheck = true),
+                txtFirstName.validate(isRequireEmptyCheck = true),
                 txtPassword.validate(listOf(Validator::isPasswordValid), true),
                 txtConfirmPassword.validate(isRequireEmptyCheck = true)
             )

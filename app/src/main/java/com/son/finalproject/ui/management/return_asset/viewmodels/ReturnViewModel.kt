@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.son.finalproject.R
 import com.son.finalproject.base.BaseViewModel
+import com.son.finalproject.data.Asset
 import com.son.finalproject.data.Assignment
 import com.son.finalproject.data.Assignment.Companion.STATE_COMPLETED
 import com.son.finalproject.data.Assignment.Companion.STATE_RETURNED
@@ -67,7 +68,7 @@ class ReturnViewModel @Inject constructor(
     fun onClickAccept(assignment: Assignment) = viewModelScope.launch{
         manageRepositoryImpl.removeAssignment(assignment)
         manageRepositoryImpl.removeRequestByAssetCode(assignment.assetCode)
-        manageRepositoryImpl.updateAsset(assignment.asset.apply { status = 0})
+        manageRepositoryImpl.updateAsset(assignment.asset.apply { status = Asset.ASSET_STATUS_AVAILABLE})
         liveListAssignment.value = getAllAssignment()
         showToast(R.string.accept_return_request_successfully)
     }

@@ -8,6 +8,8 @@ import com.son.finalproject.R
 import com.son.finalproject.base.BaseViewModel
 import com.son.finalproject.data.User
 import com.son.finalproject.repository.AuthRepositoryImpl
+import com.son.finalproject.repository.ManageRepositoryImpl
+import com.son.finalproject.ui.management.user.viewmodels.CreateUserViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,26 +17,26 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthenticationViewModel @Inject constructor(
     application: Application,
-    private val authRepository: AuthRepositoryImpl
+    private val authRepository: AuthRepositoryImpl,
+    private val manageRepositoryImpl: ManageRepositoryImpl
 ) : BaseViewModel(application) {
-    // giả data
-    val email = MutableLiveData("")
-    val password = MutableLiveData("")
+
+    val liveUser = MutableLiveData(User())
     val rewritePassword = MutableLiveData(EMPTY_STRING)
 
     init {
-       viewModelScope.launch {
-           authRepository.getUserByEmail("")
-       }
+        viewModelScope.launch {
+            authRepository.getUserByEmail("")
+        }
     }
 
     // đăng nhập
     fun loginUser() = viewModelScope.launch {
-        email.value?.let {
-            val user = authRepository.getUserByEmail(it)
+        liveUser.value?.let {
+            val user = authRepository.getUserByEmail(it.email)
             Log.d(TAG, "onClickLogin: $user")
             user?.let { user ->
-                if (user.password == password.value) {
+                if (user.password == it.password) {
                     navigateToDestination(R.id.action_signInFragment_to_homeFragment)
                     mySharedPreferences.saveUserEmail(user.email)
                     mySharedPreferences.saveUserID(user.staffCode)
@@ -50,15 +52,14 @@ class AuthenticationViewModel @Inject constructor(
 
     // Đăng ký
     fun onClickSignUp() = viewModelScope.launch {
-        email.value?.let { email ->
-            password.value?.let{ password ->
-                rewritePassword.value?.let{
-                    val isSuccess = authRepository.registerUser(User(email = email, password = password))
-                    if(isSuccess > ZERO){
-                        navigateToDestination(R.id.action_signUpFragment_to_homeFragment)
-                        mySharedPreferences.saveUserEmail(email)
-                        showToast(getString(R.string.sign_up_succesfully))
-                    }
+        getNextUserID()
+        liveUser.value?.let { user ->
+            rewritePassword.value?.let {
+                val isSuccess = authRepository.registerUser(user.apply { staffCode = nextUserID })
+                if (isSuccess > ZERO) {
+                    navigateToDestination(R.id.action_signUpFragment_to_homeFragment)
+                    mySharedPreferences.saveUserEmail(user.email)
+                    showToast(getString(R.string.sign_up_succesfully))
                 }
             }
         }
@@ -66,16 +67,30 @@ class AuthenticationViewModel @Inject constructor(
 
     // Kiểm tra đã đăng nhập tài khoản nào chưa nếu rồi thì di chuyển vào màn trong
     fun checkAccount() {
-        if(mySharedPreferences.getUserEmail() != EMPTY_STRING){
+        if (mySharedPreferences.getUserEmail() != EMPTY_STRING) {
             navigateToDestination(R.id.action_signInFragment_to_homeFragment)
         }
     }
+
     // xóa data trong ô
-    fun clearAllField(){
-        email.value = EMPTY_STRING
-        password.value = EMPTY_STRING
+    fun clearAllField() {
+        liveUser.value = User()
         rewritePassword.value = EMPTY_STRING
     }
+
+    var nextUserID = "SD0001"
+
+    private fun getNextUserID() = viewModelScope.launch {
+        val currentHighestCode = manageRepositoryImpl.getHighestUserID()
+
+        currentHighestCode?.let {
+            nextUserID =
+                CreateUserViewModel.USER_ID_FORMAT + (it.drop(CreateUserViewModel.USER_ID_FORMAT_LENGTH)
+                    .toInt() + 1).toString()
+                    .padStart(CreateUserViewModel.USER_ID_NUMBER, '0')
+        }
+    }
+
 
     companion object {
         private const val ZERO = 0

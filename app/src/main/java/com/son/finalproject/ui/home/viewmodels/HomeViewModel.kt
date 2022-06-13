@@ -74,11 +74,15 @@ class HomeViewModel @Inject constructor(
         navigateToDestination(R.id.requestManagementFragment)
     }
 
-    fun onClickAssignment(){
+    fun onCLickUser() {
+        navigateToDestination(R.id.userManagementFragment)
+    }
+
+    fun onClickAssignment() {
         navigateToDestination(R.id.assignManagementFragment)
     }
 
-    fun onClickReport(){
+    fun onClickReport() {
         navigateToDestination(R.id.reportFragment2)
     }
 
@@ -96,7 +100,7 @@ class HomeViewModel @Inject constructor(
             requestAccept = getAllRequest().filter {
                 it.status == Request.REQUEST_STATUS_COMPLETE
             }.size
-            assetsAvaiable = getAllAsset().filter { it.status == 0}.size
+            assetsAvaiable = getAllAsset().filter { it.status == Asset.ASSET_STATUS_AVAILABLE }.size
 
             content1 = "$assetCount new asset added"
             content2 = "$userCount new user added"

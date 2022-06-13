@@ -175,7 +175,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             style="@style/StatusLayout"
-            android:onClick="@{() -> action.onClickAssignment()}"
+            android:onClick="@{() -> action.onCLickUser()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linearLayout1"
             app:layout_constraintTop_toTopOf="@+id/linearLayout1">
@@ -207,7 +207,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             style="@style/StatusLayout"
-            android:onClick="@{()->action.onClickReport()}"
+            android:onClick="@{()->action.onClickRequest()}"
             android:layout_marginTop="28dp"
             app:layout_constraintEnd_toStartOf="@id/linearLayout4"
             app:layout_constraintStart_toStartOf="parent"
@@ -239,7 +239,7 @@
         <LinearLayout
             android:id="@+id/linearLayout4"
             style="@style/StatusLayout"
-            android:onClick="@{() -> action.onClickRequest()}"
+            android:onClick="@{() -> action.onClickAssignment()}"
             android:layout_marginStart="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linearLayout3"

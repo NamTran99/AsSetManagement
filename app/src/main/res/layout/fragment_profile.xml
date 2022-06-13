@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="action"
+            type="com.son.finalproject.ui.profile.viewmodels.ProfileViewModel" />
+    </data>
+    
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".temp.CreateUserActivity">
+
+            <LinearLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/background"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/ic_baseline_perm_contact_calendar_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/it_asset_management"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aclonica"
+                    android:text="@string/hoa_sen_university"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/layout_header"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/title_create_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:gravity="center"
+                    android:text="@string/my_profile"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_create_fname_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_create_user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/edt_new_fname_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawablePadding="5dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="@={action.liveUser.fullName}"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA"
+                        app:drawableStartCompat="@drawable/ic_baseline_person_outline_24" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_dob_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_create_fname_user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/edt_select_dob_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawablePadding="5dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="@={action.liveUser.dateOfBirth}"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA"
+                        app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_gender_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_dob_user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_gender_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="@string/gender"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                    <RadioGroup
+                        android:id="@+id/groupGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/tv_gender_user"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:enabled="false"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/baloo"
+                            android:padding="10dp"
+                            android:text="@string/male"
+                            android:textColor="#6E6269"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="29dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/baloo"
+                            android:padding="10dp"
+                            android:enabled="false"
+                            android:text="@string/female"
+                            android:textColor="#6E6269"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_gender_user"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/edtUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawableStart="@drawable/ic_baseline_create_24"
+                        android:drawablePadding="5dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="@={action.liveUser.userName}"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_userType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_userName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/edtUserType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawableStart="@drawable/ic_person_type"
+                        android:drawablePadding="5dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_create_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_userType"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp">
+                    
+                    <TextView
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:drawablePadding="5dp"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="10dp"
+                        android:text="@={action.liveUser.email}"
+                        android:textColor="#041B2D"
+                        android:textColorHint="#DDDDDA"
+                        app:drawableStartCompat="@drawable/ic_email" />
+                </RelativeLayout>
+                
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+</layout>

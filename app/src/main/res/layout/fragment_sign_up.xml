@@ -63,16 +63,50 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edt_username_signup"
+                android:id="@+id/edt_first_name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_signup_signup"
                 android:layout_marginHorizontal="@dimen/_10sdp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_firstName"
+                    android:hint="@string/first_name"
+                    android:text="@={action.liveUser.firstName}"
+                    style="@style/TextInputStyle"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/edt_first_name_signup"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_lastname"
+                    android:hint="@string/last_name"
+                    android:text="@={action.liveUser.lastName}"
+                    style="@style/TextInputStyle"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_username_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/edt_lastname"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_username"
                     android:hint="@string/email"
-                    android:text="@={action.email}"
+                    android:text="@={action.liveUser.email}"
                     style="@style/TextInputStyle"
                     android:inputType="textEmailAddress"
                     android:textColorHint="@color/white"/>
@@ -90,7 +124,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txt_password"
                     android:drawableStart="@drawable/ic_baseline_info_24"
-                    android:text="@={action.password}"
+                    android:text="@={action.liveUser.password}"
                     style="@style/TextInputStyle"
                     android:hint="@string/password"
                     android:imeOptions="actionDone"

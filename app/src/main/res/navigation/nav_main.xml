@@ -155,5 +155,9 @@
         android:id="@+id/returnManagementFragment"
         android:name="com.son.finalproject.ui.management.return_asset.fragments.ReturnManagementFragment"
         android:label="ReturnManagementFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.son.finalproject.ui.profile.fragments.ProfileFragment"
+        android:label="ProfileFragment" />
 
 </navigation>

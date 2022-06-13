@@ -24,7 +24,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="maxLines">1</item>
-        <item name="android:autoSizeMaxTextSize">@dimen/_14sdp</item>
+        <item name="android:autoSizeMaxTextSize">@dimen/_20sdp</item>
         <item name="android:autoSizeMinTextSize">@dimen/_8sdp</item>
         <item name="autoSizeTextType">uniform</item>
         <item name="android:textStyle">bold</item>

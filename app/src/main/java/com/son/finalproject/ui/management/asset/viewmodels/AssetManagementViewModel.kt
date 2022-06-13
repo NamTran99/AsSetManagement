@@ -49,7 +49,9 @@ class AssetManagementViewModel @Inject constructor(
         filterStatusID = when (statusID) {
             R.id.menu_available -> 0
             R.id.menu_not_available -> 1
-            else -> 2
+            R.id.menu_assigned -> 2
+            R.id.menu_all -> 3
+            else -> 0
         }
 
         filterAssetList()
@@ -87,7 +89,7 @@ class AssetManagementViewModel @Inject constructor(
     }
 
     companion object {
-        const val FILTER_DEFAULT_STATUS_ID = 2
+        const val FILTER_DEFAULT_STATUS_ID = 3
         const val EMPTY_STRING = ""
     }
 }

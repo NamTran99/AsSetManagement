@@ -6,8 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.son.finalproject.R
 import com.son.finalproject.base.BaseViewModel
+import com.son.finalproject.data.Asset
 import com.son.finalproject.data.Assignment
 import com.son.finalproject.data.Request
+import com.son.finalproject.data.Request.Companion.REQUEST_STATUS_COMPLETE
 import com.son.finalproject.repository.ManageRepositoryImpl
 import com.son.finalproject.utils.Extension.getLocalDate
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -82,8 +84,9 @@ class RequestViewModel @Inject constructor(
         )
 
         manageRepositoryImpl.insertAssignment(assignment)
-        manageRepositoryImpl.updateRequest(request.apply { status = 2 })
-        manageRepositoryImpl.updateAsset(request.asset.apply { status = 2 })
+        manageRepositoryImpl.updateRequest(request.apply { status = REQUEST_STATUS_COMPLETE })
+        manageRepositoryImpl.updateAsset(request.asset.apply { status = Asset.ASSET_STATUS_ASSIGNED })
+        manageRepositoryImpl.removeRequestByAssetCode(request.assetCode)
         showToast(R.string.accept_request_successfully)
         filterRequest()
     }

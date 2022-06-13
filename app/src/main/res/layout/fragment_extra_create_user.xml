@@ -129,7 +129,7 @@
                     android:drawablePadding="5dp"
                     android:elevation="5dp"
                     android:fontFamily="@font/baloo"
-                    android:hint="@string/user_name"
+                    android:hint="@string/email"
                     android:padding="10dp"
                     android:text="@={action.liveUser.email}"
                     android:textColor="#041B2D"
@@ -143,7 +143,7 @@
                 android:layout_below="@+id/layout_create_email"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="2dp">
 
