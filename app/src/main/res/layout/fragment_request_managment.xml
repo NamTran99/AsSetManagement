@@ -176,6 +176,11 @@
                         <TextView
                             style="@style/FieldParent"
                             android:layout_width="@dimen/_100sdp"
+                            android:text="@string/user_name" />
+
+                        <TextView
+                            style="@style/FieldParent"
+                            android:layout_width="@dimen/_100sdp"
                             android:text="@string/assigned_date" />
 
                         <TextView

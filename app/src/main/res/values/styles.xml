@@ -85,6 +85,7 @@
         <item name="android:autoSizeMaxTextSize">@dimen/_14sdp</item>
         <item name="android:autoSizeMinTextSize">@dimen/_9sdp</item>
         <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="ProgressDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

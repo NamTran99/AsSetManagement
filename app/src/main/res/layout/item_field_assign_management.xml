@@ -23,7 +23,7 @@
 
         <TextView
             style="@style/FieldChildren"
-            android:layout_width="@dimen/_50sdp"
+            android:layout_width="@dimen/_100sdp"
             android:text="@{index}"
             tools:text="@string/no" />
 
