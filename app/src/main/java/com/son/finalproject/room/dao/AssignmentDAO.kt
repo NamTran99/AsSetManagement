@@ -16,4 +16,5 @@ interface AssignmentDAO : BaseDao<Assignment> {
 
     @Query("select * from ${RoomExtension.TABLE_ASSIGNMENT} where userCode = :userID")
     suspend fun getAssignmentByUserID(userID: String): List<Assignment>
+
 }

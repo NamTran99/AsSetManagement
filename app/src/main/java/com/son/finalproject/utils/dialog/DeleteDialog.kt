@@ -23,6 +23,10 @@ class DeleteDialog : DialogFragment() {
 
     private var onClickYes: (() -> Unit)? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = DataBindingUtil.inflate(
             layoutInflater,

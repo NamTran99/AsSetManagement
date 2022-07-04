@@ -67,23 +67,35 @@ class HomeViewModel @Inject constructor(
 
     // di chuyển vào màn hình Asset, mấy màn khác tương tự
     fun onClickAsset() {
-        navigateToDestination(R.id.assetManageFragment)
+        if(isAdminType){
+            navigateToDestination(R.id.assetManageFragment)
+        }else{
+            showToast(R.string.warning_have_to_admin)
+        }
     }
 
     fun onClickRequest() {
-        navigateToDestination(R.id.requestManagementFragment)
+        if(!isAdminType){
+            navigateToDestination(R.id.requestManagementFragment)
+        }else{
+            showToast(R.string.warning_have_to_user)
+        }
     }
 
     fun onCLickUser() {
-        navigateToDestination(R.id.userManagementFragment)
+        if(isAdminType){
+            navigateToDestination(R.id.userManagementFragment)
+        }else{
+            showToast(R.string.warning_have_to_admin)
+        }
     }
 
     fun onClickAssignment() {
-        navigateToDestination(R.id.assignManagementFragment)
-    }
-
-    fun onClickReport() {
-        navigateToDestination(R.id.reportFragment2)
+        if(isAdminType){
+            navigateToDestination(R.id.assignManagementFragment)
+        }else{
+            showToast(R.string.warning_have_to_admin)
+        }
     }
 
     // lấy data để truyền vào màn hình home

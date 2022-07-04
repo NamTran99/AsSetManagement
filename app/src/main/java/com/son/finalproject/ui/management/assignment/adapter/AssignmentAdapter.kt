@@ -29,9 +29,9 @@ class AssignmentAdapter : BaseRecyclerViewAdapter<Assignment , ItemFieldAssignMa
             index = (position + 1).toString()
 
             state.text = when(item.status){
-                0 -> "declined"
-                1 -> "completed"
-                2 -> "waiting"
+                Assignment.STATE_CANCELED -> "canceled"
+                Assignment.STATE_COMPLETED -> "completed"
+                Assignment.STATE_WAITING -> "waiting"
                 else -> "declined"
             }
 

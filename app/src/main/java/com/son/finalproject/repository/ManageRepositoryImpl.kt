@@ -120,12 +120,20 @@ class ManageRepositoryImpl @Inject constructor(
         return assignmentDAO.delete(assignment)
     }
 
+    suspend fun removeAssignment(assignment: List<Assignment>) {
+        return assignmentDAO.delete(*assignment.toTypedArray())
+    }
+
     suspend fun getAssignmentByUserID(userID: String): List<Assignment> {
         return assignmentDAO.getAssignmentByUserID(userID)
     }
 
     suspend fun updateAssignment(assignment: Assignment):Int{
         return assignmentDAO.update(assignment)
+    }
+
+    suspend fun updateAssignment(assignment: List<Assignment>):Int{
+        return assignmentDAO.update(*assignment.toTypedArray())
     }
 
     //Request
@@ -143,6 +151,11 @@ class ManageRepositoryImpl @Inject constructor(
         return requestDAO.deleteRequestByAssetCode(assetCode)
     }
 
+    suspend fun getAllRequestByAssetCode(assetCode: String): List<Request>{
+        Log.d("TAG", "removeRequestByAssetCode: $assetCode")
+        return requestDAO.getAllRequestByAssetCode(assetCode)
+    }
+
     suspend fun getRequestByUserID(userID: String): List<Request> {
         return requestDAO.getRequestByUserID(userID)
     }
@@ -157,5 +170,9 @@ class ManageRepositoryImpl @Inject constructor(
 
     suspend fun updateRequest(request: Request): Int {
         return requestDAO.update(request)
+    }
+
+    suspend fun updateRequest(request: List<Request>): Int {
+        return requestDAO.update(*request.toTypedArray())
     }
 }

@@ -77,16 +77,29 @@ class RequestViewModel @Inject constructor(
             userCode = request.user.staffCode,
             assetCode = request.assetCode,
             assignedDate = getLocalDate(),
-            status = 1, //completed
+            status = Assignment.STATE_COMPLETED, //completed
             asset = request.asset,
             user = request.user,
             assignedBy = assignBy,
         )
 
         manageRepositoryImpl.insertAssignment(assignment)
-        manageRepositoryImpl.updateRequest(request.apply { status = REQUEST_STATUS_COMPLETE })
+        manageRepositoryImpl.getAllAssignment().filter { it.assetCode == request.assetCode && it.status == Assignment.STATE_WAITING }.map {
+            it.status = Assignment.STATE_CANCELED
+            it
+        }.let{
+            manageRepositoryImpl.updateAssignment(it)
+        }
+
+
         manageRepositoryImpl.updateAsset(request.asset.apply { status = Asset.ASSET_STATUS_ASSIGNED })
-        manageRepositoryImpl.removeRequestByAssetCode(request.assetCode)
+        manageRepositoryImpl.getAllRequestByAssetCode(request.assetCode).map {
+            it.status = Request.REQUEST_STATUS_DECLINED
+            it
+        }.let {
+            manageRepositoryImpl.updateRequest(it)
+        }
+        manageRepositoryImpl.updateRequest(request.apply { status = REQUEST_STATUS_COMPLETE })
         showToast(R.string.accept_request_successfully)
         filterRequest()
     }
@@ -112,7 +125,7 @@ class RequestViewModel @Inject constructor(
         )
 
         manageRepositoryImpl.insertAssignment(assignment)
-        manageRepositoryImpl.updateRequest(request.apply { status = 1 })
+        manageRepositoryImpl.updateRequest(request.apply { status = Request.REQUEST_STATUS_DECLINED })
         showToast(R.string.declined_request_successfully)
         filterRequest()
     }

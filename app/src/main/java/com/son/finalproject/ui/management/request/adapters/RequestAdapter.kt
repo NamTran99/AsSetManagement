@@ -37,7 +37,7 @@ class RequestAdapter(private val isAdmin: Boolean): BaseRecyclerViewAdapter<Requ
             state.text = when(item.status){
                 0 -> "Requesting"
                 1 -> "Declined"
-                2 -> "Complete"
+                2 -> "Completed"
                 else -> "Requesting"
             }
 

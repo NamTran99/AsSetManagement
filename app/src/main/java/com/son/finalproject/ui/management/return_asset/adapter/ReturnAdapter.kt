@@ -6,7 +6,6 @@ import com.son.finalproject.data.Assignment
 import com.son.finalproject.data.Assignment.Companion.STATE_COMPLETED
 import com.son.finalproject.data.Assignment.Companion.STATE_RETURNED
 import com.son.finalproject.data.Assignment.Companion.STATE_RETURNING
-import com.son.finalproject.databinding.ItemFieldAssignManagementBinding
 import com.son.finalproject.databinding.ItemFieldReturnManagementBinding
 
 class ReturnAdapter(private val isAdminType: Boolean) : BaseRecyclerViewAdapter<Assignment , ItemFieldReturnManagementBinding>(){

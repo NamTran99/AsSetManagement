@@ -54,7 +54,10 @@ class CreateAssignmentViewModel @Inject constructor(
     }
     // THực hiện logic khi nhấn lưu assignment
     fun onClickSaveAssignment() = viewModelScope.launch {
+        val user = manageRepositoryImpl.getUserByID(mySharedPreferences.getUserID())
+
         liveAssign.value?.apply {
+            this.assignedBy = user.fullName
             if (manageRepositoryImpl.insertAssignment(this) >= 0
             ) {
                 showToast(R.string.create_assignment_successfully)

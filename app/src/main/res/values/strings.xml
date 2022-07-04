@@ -57,6 +57,8 @@
     <string name="create_return_request_successfully">Create return request successfully</string>
     <string name="accept_return_request_successfully">Accept return request successfully</string>
     <string name="decline_return_request_successfully">Decline return request successfully</string>
+    <string name="warning_have_to_admin">Only ADMIN access this function</string>
+    <string name="warning_have_to_user">Only USER can access this function</string>
     <string name="cancel_return_request_successfully">Cancel return request successfully</string>
     <string name="remove_request_successfully">Remove request successfully</string>
     <string name="declined_request_successfully">Decline request successfully</string>
@@ -136,4 +138,5 @@
     <string name="issued_asset">Issued Asset</string>
     <string name="my_profile">My Profile</string>
     <string name="pending">Pending</string>
+    <string name="canceled">canceled</string>
 </resources>

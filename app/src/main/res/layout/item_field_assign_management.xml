@@ -48,7 +48,7 @@
         <TextView
             style="@style/FieldChildren"
             android:layout_width="@dimen/_100sdp"
-            android:text="nam tran"
+            android:text="@{assignment.assignedBy}"
             tools:text="@string/assigned_by" />
 
         <TextView
